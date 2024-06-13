@@ -5,11 +5,18 @@ def intro():
     print("A: Open the door")
     print("B: Kick the door")
 
-    answer = str(input())
-    if answer == "a" or "A":
-        print("Correct")  
-    elif answer == "b" or "B":
-        print("wrong")
+    while True:
+        answer = str(input())
+        if answer == "a" or answer == "A":
+            print("Correct")
+            first_room()  
+        elif answer == "b" or answer == "B":
+            print("wrong")
+            game_over()
+        else:
+            print("Please choose a valid option")
+        
+        
 
 def game_over():
     print("You have been arrested, game over")
@@ -23,7 +30,5 @@ def main():
     name = str(input("To begin, please enter your name: "))
     print(f"Welcome to the game {name}")
     intro()
-
-
 
 main()
