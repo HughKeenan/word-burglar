@@ -7,10 +7,12 @@ def intro():
 
     answer = str(input())
     if answer == "a" or "A":
-        print("Correct")
-        first_room()
+        print("Correct")  
     elif answer == "b" or "B":
-        print("wrong")   
+        print("wrong")
+
+def game_over():
+    print("You have been arrested, game over")
 
 def first_room():
     print("You are in the first room")
