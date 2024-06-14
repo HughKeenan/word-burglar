@@ -8,21 +8,51 @@ def intro():
     while True:
         answer = str(input())
         if answer == "a" or answer == "A":
-            print("Correct")
             first_room()  
         elif answer == "b" or answer == "B":
-            print("wrong")
             game_over()
         else:
             print("Please choose a valid option")
-        
-        
+
+def first_room():
+    print("You are in the first room. Do you...")
+
+    print("A: Proceed to the last room")
+    print("B: Go back to the intro")
+    print("C: Wake the residents up and surrender")
+
+    while True:
+        answer = str(input())
+        if answer == "a" or answer == "A":
+            last_room()  
+        elif answer == "b" or answer == "B":
+            intro()
+        elif answer == "c" or answer == "C":
+            game_over()    
+        else:
+            print("Please choose a valid option")
+
+def last_room():
+    print("You are in the last room. Do you...")
+
+    print("A: Proceed to the last room")
+    print("B: Go back to the first room")
+    print("C: Wake the residents up and surrender")
+
+    while True:
+        answer = str(input())
+        if answer == "a" or answer == "A":
+            last_room()  
+        elif answer == "b" or answer == "B":
+            first_room()
+        elif answer == "c" or answer == "C":
+            game_over()    
+        else:
+            print("Please choose a valid option")
 
 def game_over():
     print("You have been arrested, game over")
-
-def first_room():
-    print("You are in the first room")
+    
 
 def main():
     print("Welcome to Word Burglar. In this text-based game you will make choices to pull off a heist.\n Your objective is to find the priceless painting hidden somewhere in the house.")
