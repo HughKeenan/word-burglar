@@ -35,7 +35,7 @@ def first_room():
 def last_room():
     print("You are in the last room. Do you...")
 
-    print("A: Proceed to the last room")
+    print("A: Open the safe")
     print("B: Go back to the first room")
     print("C: Wake the residents up and surrender")
 
@@ -52,6 +52,16 @@ def last_room():
 
 def game_over():
     print("You have been arrested, game over")
+    print("Would you like to play again? Please type Y/N")
+    
+    while True:
+        answer = str(input())
+        if answer == "y" or answer == "Y":
+            intro()  
+        elif answer == "n" or answer == "N":
+            main()    
+        else:
+            print("Please choose a valid option")
     
 
 def main():

@@ -5,6 +5,8 @@ A bug arose with the function to show choices for the first room where the wrong
 
 A bug arose also with the possibility of the player attempting to input a choice that doesn't represent one of the options, as this could create a dead end. Nesting the choices inside a while loop resolved the issue
 
+The function to call game over initially resulted in a dead end, this was fixed by implementing user input to allow the player to return to the intro screen or restart the game
+
 Fixes:
 If statement:
 https://www.reddit.com/r/learnpython/comments/u9ts2r/python_ignoring_my_elif_statement/
