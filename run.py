@@ -1,3 +1,4 @@
+import random 
 
 def intro():
     print("You are standing outside of the house you plan to rob. Do you...")
@@ -50,9 +51,14 @@ def last_room():
             print("Please choose a valid option")
 
 def safecracker():
-    print("You approach the safe. On the front is a 10 digit keypad.")
-    print(" You remember from casing the house that thecode is 3 digits long and the first one is 2.")
+    print("You approach the safe. On the front is a standard 10 digit keypad.")
+    print("You remember from casing the house that the code is 3 digits long and the first one is 2.")
     print("Be careful! You've seen this kind of safe before, if you enter more than 5 wrong numbers, it will set off the alarm and the police will be here in minutes!")
+
+    numbers = [x for x in range(10)]
+    attempts = 5
+    
+
 
 def game_over():
     print("You have been arrested, game over")
