@@ -7,6 +7,8 @@ A bug arose also with the possibility of the player attempting to input a choice
 
 The function to call game over initially resulted in a dead end, this was fixed by implementing user input to allow the player to return to the intro screen or restart the game
 
+The function to generate the safe combination initially would not work, 
+
 Fixes:
 If statement:
 https://www.reddit.com/r/learnpython/comments/u9ts2r/python_ignoring_my_elif_statement/

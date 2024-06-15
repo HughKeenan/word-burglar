@@ -51,14 +51,56 @@ def last_room():
             print("Please choose a valid option")
 
 def safecracker():
-    print("You approach the safe. On the front is a standard 10 digit keypad.")
-    print("You remember from casing the house that the code is 3 digits long and the first one is 2.")
+    print("You approach the safe. On the front is a keypad with numbers 0 - 4.")
+    print("You remember from casing the house that the code is 3 digits long and the first one is 2. If you get any digit wrong you'll have to go back to the start of the sequence.")
     print("Be careful! You've seen this kind of safe before, if you enter more than 5 wrong numbers, it will set off the alarm and the police will be here in minutes!")
 
-    numbers = [x for x in range(10)]
+    numbers = [x for x in range(4)]
     attempts = 5
-    
 
+    known_number = 2
+
+    code = random.sample(numbers,2)
+
+    combination = []
+    combination.append(known_number)
+    combination.extend(code)
+    print(combination)
+
+    while True:
+        solution = int(input("Please enter the first digit: "))
+        if solution == known_number:
+            print("Correct!")
+            solution2 = int(input("Please enter the second digit: "))
+            if solution2 == combination[1]:
+                print("Correct!")    
+                solution3 = int(input("Please enter the final digit: "))
+                if solution3 == combination[2]:
+                    print("You did it!")
+                    game_won()
+                    break
+                else:
+                    print("Wrong, start again")
+                    attempts -=1
+                    print(f"{attempts} attempts remaining")
+                if attempts == 0:
+                    game_over()    
+            else:
+                print("Wrong, start again")
+                attempts -=1
+                print(f"{attempts} attempts remaining")
+                if attempts == 0:
+                    game_over()
+        else:
+            print("What are you doing?! You know this one!")
+            attempts -=1
+            print(f"{attempts} attempts remaining")
+            if attempts == 0:
+                game_over()               
+
+
+def game_won():
+    print("You Win!")
 
 def game_over():
     print("You have been arrested, game over")
@@ -75,9 +117,9 @@ def game_over():
     
 def main():
     print("Welcome to Word Burglar. In this text-based game you will make choices to pull off a heist.\n Your objective is to find the priceless painting hidden somewhere in the house.")
-    print("As you progress through the game, you will be presented with choices A-D as you enter each room.\n Make your choice by typing the letter corresponding to the one you want.")
+    print("As you progress through the game, you will be presented with choices A-D as you enter each room.\n Make your choice by typing the letter corresponding to the one you want, followed by ENTER.")
     name = str(input("To begin, please enter your name: "))
     print(f"Welcome to the game {name}")
     intro()
 
-main()
+safecracker()
