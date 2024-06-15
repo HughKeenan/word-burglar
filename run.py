@@ -1,6 +1,9 @@
 import random 
 
 def intro():
+    """
+    This function is the beginning of the game
+    """
     print("You are standing outside of the house you plan to rob. Do you...")
     
     print("A: Open the door")
@@ -16,6 +19,9 @@ def intro():
             print("Please choose a valid option")
 
 def first_room():
+    """
+    Player choices for the first room
+    """
     print("You are in the first room. Do you...")
 
     print("A: Proceed to the last room")
@@ -34,6 +40,9 @@ def first_room():
             print("Please choose a valid option")
 
 def last_room():
+    """
+    Player Choices for the last room
+    """
     print("You are in the last room. Do you...")
     print("A: Open the safe")
     print("B: Go back to the first room")
@@ -51,6 +60,9 @@ def last_room():
             print("Please choose a valid option")
 
 def safecracker():
+    """
+    This function is a random number generator, the player must guess the safe code to win the final prize
+    """
     print("You approach the safe. On the front is a keypad with numbers 0 - 4.")
     print("You remember from casing the house that the code is 3 digits long and the first one is 2. If you get any digit wrong you'll have to go back to the start of the sequence.")
     print("Be careful! You've seen this kind of safe before, if you enter more than 5 wrong numbers, it will set off the alarm and the police will be here in minutes!")
@@ -65,7 +77,6 @@ def safecracker():
     combination = []
     combination.append(known_number)
     combination.extend(code)
-    print(combination)
 
     while True:
         solution = int(input("Please enter the first digit: "))
@@ -100,9 +111,15 @@ def safecracker():
 
 
 def game_won():
+    """
+    Ends the game in a victory state
+    """
     print("You Win!")
 
 def game_over():
+    """
+    Ends the game in a fail state
+    """
     print("You have been arrested, game over")
     print("Would you like to play again? Please type Y/N")
     
@@ -116,10 +133,13 @@ def game_over():
             print("Please choose a valid option")
     
 def main():
+    """
+    The main function serving as the game's menu, allowing the player to input their name and start playing
+    """
     print("Welcome to Word Burglar. In this text-based game you will make choices to pull off a heist.\n Your objective is to find the priceless painting hidden somewhere in the house.")
     print("As you progress through the game, you will be presented with choices A-D as you enter each room.\n Make your choice by typing the letter corresponding to the one you want, followed by ENTER.")
     name = str(input("To begin, please enter your name: "))
     print(f"Welcome to the game {name}")
     intro()
 
-safecracker()
+main()
