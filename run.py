@@ -4,17 +4,27 @@ def intro():
     """
     This function is the beginning of the game
     """
-    print("You are standing outside of the house you plan to rob. Do you...")
-    
-    print("A: Open the door")
-    print("B: Kick the door")
+    print("After long preparations, you are finally ready to pull off your heist of the great treasure in Mr. Holmes' residence.")
+    print("You know his schedule and he should be asleep by now. Time to get to work.")
+    print("Approaching the house, you see a window beside the front door. Do you...")
+    print("A: Kick the door down")
+    print("B: Break the window")
+    print("C: Open the window quietly")
+    print("D: Cut and run")
 
     while True:
         answer = str(input())
         if answer == "a" or answer == "A":
-            first_room()  
+            print("Boldly striding up to the front door, you aim a mighty kick at it and drive your foot home.\n Your foot goes straight into the letterbox, whereupon it becomes stuck.")
+            game_over()  
         elif answer == "b" or answer == "B":
+            print("Sneaking around to the side of the house, you put your elbow through the window. It shatters and slices a deep gash in your arm, causing you to scream in agony.")
             game_over()
+        elif answer == "c" or answer == "C":     
+            print("Taking a thin knife from your pocket, you jemmy open the window quietly and slip inside.")
+            first_room()
+        elif answer == "d" or answer == "D":
+            print("For reasons known only to yourself, you wuss out at the very first hurdle. Pathetic.")
         else:
             print("Please choose a valid option")
 
@@ -65,10 +75,11 @@ def safecracker():
     """
     print("You approach the safe. On the front is a keypad with numbers 0 - 4.")
     print("You remember from casing the house that the code is 3 digits long and the first one is 2. If you get any digit wrong you'll have to go back to the start of the sequence.")
-    print("Be careful! You've seen this kind of safe before, if you enter more than 5 wrong numbers, it will set off the alarm and the police will be here in minutes!")
+    print("Be careful! You've seen this kind of safe before!")
+    print("If you enter more than 5 wrong numbers, it will set off the alarm and the police will be here in minutes!")
 
     numbers = [x for x in range(4)]
-    attempts = 5
+    attempts = 6
 
     known_number = 2
 
@@ -77,6 +88,8 @@ def safecracker():
     combination = []
     combination.append(known_number)
     combination.extend(code)
+    print(numbers)
+    print(combination)
 
     while True:
         solution = int(input("Please enter the first digit: "))
@@ -120,7 +133,9 @@ def game_over():
     """
     Ends the game in a fail state
     """
-    print("You have been arrested, game over")
+    print("Blaring sirens ring in your ears as the police, responding to reports to suspicious activity,\n tackle you to the ground and cuff your hands behind your back.")
+    print("You will be going to prison for a very long time.")
+    print("GAME OVER")
     print("Would you like to play again? Please type Y/N")
     
     while True:
@@ -136,7 +151,7 @@ def main():
     """
     The main function serving as the game's menu, allowing the player to input their name and start playing
     """
-    print("Welcome to Word Burglar. In this text-based game you will make choices to pull off a heist.\n Your objective is to find the priceless painting hidden somewhere in the house.")
+    print("Welcome to Word Burglar. In this text-based game you will make choices to pull off a heist.\n Your objective is to find the priceless treasure hidden somewhere in the house.")
     print("As you progress through the game, you will be presented with choices A-D as you enter each room.\n Make your choice by typing the letter corresponding to the one you want, followed by ENTER.")
     name = str(input("To begin, please enter your name: "))
     print(f"Welcome to the game {name}")
