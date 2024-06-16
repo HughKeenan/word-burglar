@@ -88,6 +88,11 @@ def corridor():
         else:
             print("Please choose a valid option")
 
+def lounge():
+    """
+    This function provides a puzzle for the player to solve
+    """
+
 def last_room():
     """
     Player Choices for the last room
