@@ -33,20 +33,27 @@ def first_room():
     """
     Player choices for the first room
     """
-    print("You are in the first room. Do you...")
+    print("Straightening up, you look around the dark room. Do you...")
 
-    print("A: Proceed to the last room")
-    print("B: Go back to the intro")
-    print("C: Wake the residents up and surrender")
+    print("A: Run to the door. Let's get this over with and get out!")
+    print("B: Check the room for valuables")
+    print("C: Quietly proceed to the door")
+    print("D: Cut and run")
 
     while True:
         answer = str(input())
         if answer == "a" or answer == "A":
-            last_room()  
+            print("Sprinting towards the door, you fail to notice the coffee table a few feet in front of you. Tripping over it, you fall face first into the floor and suffer a severe concussion.")
+            game_over()  
         elif answer == "b" or answer == "B":
-            intro()
+            print("Crouching down so as not to be seen, you do a thorough inventory of the room, but what you're looking for isn't here.")
+            first_room()
         elif answer == "c" or answer == "C":
-            game_over()    
+            print("Carefully you proceed to the door, taking care not to hit off the coffee table and make a noise.")
+            corridor()   
+        elif answer == "d" or answer == "D":
+            print("At least you made it inside.")
+            wuss_out()     
         else:
             print("Please choose a valid option")
 
@@ -153,6 +160,7 @@ def wuss_out():
     Runs if the player chooses to end the run voluntarily
     """
     print("Red faced and blinded by tears of humiliation, you slink away defeated, knowing you didn't have what it takes to claim the ultimate prize.")
+    print("Would you like to play again? Please type Y/N")
     while True:
         answer = str(input())
         if answer == "y" or answer == "Y":
