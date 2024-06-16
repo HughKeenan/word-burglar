@@ -25,6 +25,7 @@ def intro():
             first_room()
         elif answer == "d" or answer == "D":
             print("For reasons known only to yourself, you wuss out at the very first hurdle. Pathetic.")
+            wuss_out()
         else:
             print("Please choose a valid option")
 
@@ -146,7 +147,21 @@ def game_over():
             main()    
         else:
             print("Please choose a valid option")
-    
+
+def wuss_out():
+    """
+    Runs if the player chooses to end the run voluntarily
+    """
+    print("Red faced and blinded by tears of humiliation, you slink away defeated, knowing you didn't have what it takes to claim the ultimate prize.")
+    while True:
+        answer = str(input())
+        if answer == "y" or answer == "Y":
+            intro()  
+        elif answer == "n" or answer == "N":
+            main()    
+        else:
+            print("Please choose a valid option")
+
 def main():
     """
     The main function serving as the game's menu, allowing the player to input their name and start playing
