@@ -57,6 +57,15 @@ def first_room():
         else:
             print("Please choose a valid option")
 
+def corridor():
+    print("Closing the door softly behind you, you find yourself in the house's shadowy corridor. Do you...")
+
+    print("A: Go into the nearby bathroom. Who knows what's inside?!")
+    print("B: Head into the lounge.")
+    print("C: Head into the trophy room.")
+    print("Go further down the corridor.")
+    print("D: Cut and run.")
+
 def last_room():
     """
     Player Choices for the last room
