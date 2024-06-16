@@ -58,13 +58,35 @@ def first_room():
             print("Please choose a valid option")
 
 def corridor():
+    """
+    This function acts as the main hub of the game, from which the player can head to the ending or try optional challenges
+    """
     print("Closing the door softly behind you, you find yourself in the house's shadowy corridor. Do you...")
-
-    print("A: Go into the nearby bathroom. Who knows what's inside?!")
+    print("A: Go into the nearby bathroom.")
     print("B: Head into the lounge.")
     print("C: Head into the trophy room.")
-    print("Go further down the corridor.")
-    print("D: Cut and run.")
+    print("D: Go further down the corridor.")
+    print("E: Cut and run.")
+
+    while True:
+        answer = str(input())
+        if answer == "a" or answer == "A":
+            print("What are you doing?! This is Word Burglar, not Turd Burlgar!")
+            corridor()
+        elif answer == "b" or answer == "B":
+            print("Heading to the door directly opposite you, you gently open it and slip into the lounge")
+            lounge()
+        elif answer == "c" or answer == "C":
+            print("Glancing down the corridor, you walk down it a few paces to the next door and enter the trophy room.")
+            trophy_room()
+        elif answer == "d" or answer == "D":
+            print("Listening intently, you pad down the corridor towards your real prize.")
+            saferoom_door()
+        elif answer == "e" or answer == "E":
+            print("What, scared of the dark?")
+            wuss_out()     
+        else:
+            print("Please choose a valid option")
 
 def last_room():
     """
