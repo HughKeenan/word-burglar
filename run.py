@@ -91,8 +91,31 @@ def corridor():
 
 def lounge():
     """
-    This function provides a puzzle for the player to solve
+    This function brings the player into the lounge, where they can encounter another puzzle
     """
+    print("You enter the lounge. ")
+    print("A: ")
+    print("B: ")
+    print("C: ")
+    print("D: ")
+
+    while True:
+        answer = str(input())
+        if answer == "a" or answer == "A":
+            print("")
+            
+        elif answer == "b" or answer == "B":
+            print("")
+            
+        elif answer == "c" or answer == "C":
+            print("")
+            
+        elif answer == "d" or answer == "D":
+            print("")
+                 
+        else:
+            print("Please choose a valid option")
+
 
 def trophy_room():
     """
