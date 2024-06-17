@@ -1,4 +1,5 @@
-import random 
+import random
+from random import shuffle 
 
 def intro():
     """
@@ -119,6 +120,27 @@ def trophy_room():
         else:
             print("Please choose a valid option")
 
+def trophy_trap():
+    """
+    Provides an optional puzzle by asking the player to solve a word puzzle formed from rearranged letters in a string
+    """
+    password = "avaricious"
+    password_question = "".join(random.sample(password, len(password)))
+    print(password_question)
+
+    print("Starting to panic, you frantically turn around looking for a solution.\n You notice a placard has descended from the ceiling.")
+    print("It says 'Your greed will be your undoing thief! Admit it and decipher my puzzle to be freed! What are you?!'")
+    print(f"Beneath the message you see {password_question}")
+    
+    while True:
+        answer = str(input("What do you admit to being? "))
+        if answer == password:
+            print("The sawblades retract and you heave a sigh of relief. Deciding to leave the trophy where it is, you waste no time in leaving the room")
+            corridor()
+        else:
+            print("Your inability to answer the question signals to the sawblades and they extend on their arms, cutting you to ribbons.")
+            gruesome_death()
+
 def last_room():
     """
     Player Choices for the last room
@@ -203,7 +225,7 @@ def game_over():
     """
     Ends the game in a fail state
     """
-    print("Blaring sirens ring in your ears as the police, responding to reports to suspicious activity,\n tackle you to the ground and cuff your hands behind your back.")
+    print("Blaring sirens ring in your ears as the police, responding to reports of suspicious activity,\n tackle you to the ground and cuff your hands behind your back.")
     print("You will be going to prison for a very long time.")
     print("GAME OVER")
     print("Would you like to play again? Please type Y/N")
@@ -258,4 +280,4 @@ def main():
     print(f"Welcome to the game {name}")
     intro()
 
-trophy_room()
+trophy_trap()

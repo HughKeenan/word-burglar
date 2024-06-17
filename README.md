@@ -15,3 +15,6 @@ https://www.reddit.com/r/learnpython/comments/u9ts2r/python_ignoring_my_elif_sta
 
 Invalid choices
 https://stackoverflow.com/questions/64070816/how-to-restart-a-loop-if-the-input-is-wrong
+
+Word scramble:
+https://www.youtube.com/watch?v=vtjLxNU6eyk
