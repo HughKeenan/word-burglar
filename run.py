@@ -5,7 +5,7 @@ def intro():
     This function is the beginning of the game
     """
     print("After long preparations, you are finally ready to pull off your heist of the great treasure in Mr. Holmes' residence.")
-    print("You know his schedule and he should be asleep by now. Time to get to work.")
+    print("You've heard his house is a bit weird, but that won't stop you. You know his schedule and he should be asleep by now. Time to get to work.")
     print("Approaching the house, you see a window beside the front door. Do you...")
     print("A: Kick the door down")
     print("B: Break the window")
@@ -93,6 +93,33 @@ def lounge():
     This function provides a puzzle for the player to solve
     """
 
+    
+def trophy_room():
+    """
+    This function allows the player to enter the trophy room and choose whether to engage with an optional puzzle 
+    """
+    print("Closing the door behind you, you see the room is bare, save for the large golden trophy set on a pedastal in the centre. Do you...")
+    print("A: Look around the room.")
+    print("B: Run straight up to the trophy and take it. Shiny!")
+    print("C: Cautiously approach the trophy.")
+    print("D: Go back to the corridor, this seems off.")
+    while True:
+        answer = str(input())
+        if answer == "a" or answer == "A":
+            print("You look carefully into every nook and cranny around the edge of the room, but nothing catches your eye.\n Maybe he's just weirdly proud of his trophy.\n You even open the door and peek out into the corridor but there's nothing there.")
+            trophy_room()
+        elif answer == "b" or answer == "B":
+            print("In your haste to reach it, you don't notice the floor tile that depresses under your tread.\n Such is your speed that a clever mechanism intended to trap you instead scythes clean through your body, slicing you in two.")
+            gruesome_death()
+        elif answer == "c" or answer == "C":
+            print("Keeping an eye out, you approach the trophy. A tile depresses under your foot and you stumble forward.\n Getting to your feet, you see sawblades coming out of the hold and floor on long arms, preventing you from moving in any direction.")
+            trophy_trap()
+        elif answer == "d" or answer == "D":
+            print("Remembering you've heard this guy's a nutjob, you decide not to risk whatever he cooked up in here and go back to the corridor")
+            corridor()     
+        else:
+            print("Please choose a valid option")
+
 def last_room():
     """
     Player Choices for the last room
@@ -117,10 +144,10 @@ def safecracker():
     """
     This function is a random number generator, the player must guess the safe code to win the final prize
     """
-    print("You approach the safe. On the front is a keypad with numbers 0 - 4.")
+    print("You approach the safe. On the front is a keypad with numbers 0 - 3.")
     print("You remember from casing the house that the code is 3 digits long and the first one is 2. If you get any digit wrong you'll have to go back to the start of the sequence.")
     print("Be careful! You've seen this kind of safe before!")
-    print("If you enter more than 5 wrong numbers, it will set off the alarm and the police will be here in minutes!")
+    print("If you enter more than 6 wrong numbers, it will set off the alarm and the police will be here in minutes!")
 
     numbers = [x for x in range(4)]
     attempts = 6
@@ -216,4 +243,4 @@ def main():
     print(f"Welcome to the game {name}")
     intro()
 
-main()
+trophy_room()
