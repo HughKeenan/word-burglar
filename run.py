@@ -93,7 +93,6 @@ def lounge():
     This function provides a puzzle for the player to solve
     """
 
-    
 def trophy_room():
     """
     This function allows the player to enter the trophy room and choose whether to engage with an optional puzzle 
@@ -217,6 +216,22 @@ def game_over():
             main()    
         else:
             print("Please choose a valid option")
+
+def gruesome_death():
+    """
+    This function ends the game if the player dies
+    """
+    print("You lie on the floor as your blood pools around you, wishing you had listened when people told you this wasn't worth it.")
+    print("Would you like to play again? Please type Y/N.")
+    while True:
+        answer = str(input())
+        if answer == "y" or answer == "Y":
+            intro()  
+        elif answer == "n" or answer == "N":
+            main()    
+        else:
+            print("Please choose a valid option")
+
 
 def wuss_out():
     """
