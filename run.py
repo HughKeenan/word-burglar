@@ -115,6 +115,8 @@ def lounge():
         else:
             print("Please choose a valid option")
 
+def lounge_trap():
+    pass
 
 def trophy_room():
     """
