@@ -18,3 +18,6 @@ https://stackoverflow.com/questions/64070816/how-to-restart-a-loop-if-the-input-
 
 Word scramble:
 https://www.youtube.com/watch?v=vtjLxNU6eyk
+
+safecracker:
+https://www.reddit.com/r/learnpython/comments/1aeofpv/crack_the_safe_code/

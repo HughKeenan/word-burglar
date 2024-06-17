@@ -135,7 +135,7 @@ def trophy_trap():
     while True:
         answer = str(input("What do you admit to being? "))
         if answer == password:
-            print("The sawblades retract and you heave a sigh of relief. Deciding to leave the trophy where it is, you waste no time in leaving the room")
+            print("The sawblades retract and you heave a sigh of relief. Deciding to leave the trophy where it is, you waste no time in leaving the room.")
             corridor()
         else:
             print("Your inability to answer the question signals to the sawblades and they extend on their arms, cutting you to ribbons.")
