@@ -93,26 +93,25 @@ def lounge():
     """
     This function brings the player into the lounge, where they can encounter another puzzle
     """
-    print("You enter the lounge. ")
-    print("A: ")
-    print("B: ")
-    print("C: ")
-    print("D: ")
+    print("The lounge is richly furnished, you see a book bound in what looks like gold on the mantlepiece. Do you...")
+    print("A: Sit on the couch and take a load off.")
+    print("B: Check out the liquor cabinet.")
+    print("C: Pick up the book.")
+    print("D: Go back to the corridor, need to stay on task.")
 
     while True:
         answer = str(input())
         if answer == "a" or answer == "A":
-            print("")
-            
+            print("You plonk down on the couch, raising a huge cloud of dust and causing you to erupt into paralysing and cacaphonous coughs and sneezes.\n You have woken Mr. Holmes and he is now calling the police.")
+            game_over()            
         elif answer == "b" or answer == "B":
-            print("")
-            
+            print("Heading over to the glass fronted liquor cabinet, you open it and take a huge gulp of brandy from one of the bottles.\n It immediately goes to your head and you dance around the room singing at the top of your voice, coming to your senses just in time to see the police car outside the window.")
+            game_over()           
         elif answer == "c" or answer == "C":
-            print("")
-            
+            print("Stalking over to the book, you reach out and grasp it with both hands")
+            lounge_trap()
         elif answer == "d" or answer == "D":
-            print("")
-                 
+            print("Deciding that such valuables out in the open are probably too good to be true, you turn on your heel and return to the corridor.")
         else:
             print("Please choose a valid option")
 
