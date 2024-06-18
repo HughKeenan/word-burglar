@@ -35,10 +35,9 @@ def first_room():
     Player choices for the first room
     """
     print("Straightening up, you look around the dark room. Do you...")
-
     print("A: Run to the door. Let's get this over with and get out!")
-    print("B: Check the room for valuables")
-    print("C: Quietly proceed to the door")
+    print("B: Quietly proceed to the door")
+    print("C: Check the room for valuables")
     print("D: Cut and run")
 
     while True:
@@ -47,11 +46,11 @@ def first_room():
             print("Sprinting towards the door, you fail to notice the coffee table a few feet in front of you. Tripping over it, you fall face first into the floor and suffer a severe concussion.")
             game_over()  
         elif answer == "b" or answer == "B":
-            print("Crouching down so as not to be seen, you do a thorough inventory of the room, but what you're looking for isn't here.")
-            first_room()
-        elif answer == "c" or answer == "C":
             print("Carefully you proceed to the door, taking care not to hit off the coffee table and make a noise.")
-            corridor()   
+            corridor()
+        elif answer == "c" or answer == "C":
+            print("Crouching down so as not to be seen, you do a thorough inventory of the room, but what you're looking for isn't here.")
+            first_room()   
         elif answer == "d" or answer == "D":
             print("At least you made it inside.")
             wuss_out()     
@@ -81,7 +80,7 @@ def corridor():
             print("Glancing down the corridor, you walk down it a few paces to the next door and enter the trophy room.")
             trophy_room()
         elif answer == "d" or answer == "D":
-            print("Listening intently, you pad down the corridor towards a locked door.")
+            print("Listening intently, you pad down the corridor towards another door.")
             saferoom_door()
         elif answer == "e" or answer == "E":
             print("What, scared of the dark?")
@@ -94,22 +93,22 @@ def lounge():
     This function brings the player into the lounge, where they can encounter another puzzle
     """
     print("The lounge is richly furnished, you see a book bound in what looks like gold on the mantlepiece. Do you...")
-    print("A: Sit on the couch and take a load off.")
+    print("A: Pick up the book.")
     print("B: Check out the liquor cabinet.")
-    print("C: Pick up the book.")
+    print("C: Sit on the couch and take a load off.")
     print("D: Go back to the corridor, need to stay on task.")
 
     while True:
         answer = str(input())
         if answer == "a" or answer == "A":
-            print("You plonk down on the couch, raising a huge cloud of dust and causing you to erupt into paralysing and cacaphonous coughs and sneezes.\n You have woken Mr. Holmes and he is now calling the police.")
-            game_over()            
+            print("Stalking over to the book, you reach out and grasp it with both hands. It doesn't move, and you hear a loud click.")
+            lounge_trap()            
         elif answer == "b" or answer == "B":
             print("Heading over to the glass fronted liquor cabinet, you open it and take a huge gulp of brandy from one of the bottles.\n It immediately goes to your head and you dance around the room singing at the top of your voice, coming to your senses just in time to see the police car outside the window.")
             game_over()           
         elif answer == "c" or answer == "C":
-            print("Stalking over to the book, you reach out and grasp it with both hands. It doesn't move, and you hear a loud click.")
-            lounge_trap()
+            print("You plonk down on the couch, raising a huge cloud of dust and causing you to erupt into paralysing and cacaphonous coughs and sneezes.\n You have woken Mr. Holmes and he is now calling the police.")
+            game_over()
         elif answer == "d" or answer == "D":
             print("Deciding that such valuables out in the open are probably too good to be true, you turn on your heel and return to the corridor.")
         else:
@@ -176,7 +175,6 @@ def trophy_trap():
     password = "avaricious"
     password_question = "".join(random.sample(password, len(password)))
     
-
     print("Starting to panic, you frantically turn around looking for a solution.\n You notice a placard has descended from the ceiling.")
     print("It says 'Your greed will be your undoing thief! Admit it and decipher my puzzle to be freed! What are you?!'")
     print(f"Beneath the message you see {password_question}. It must be an anagram! Unscramble the letters to solve it!")
@@ -191,7 +189,29 @@ def trophy_trap():
             gruesome_death()
 
 def saferoom_door():
-    pass
+    print("Your head is on a swivel at this final door. The only other room is Holmes' bedroom, so this must be it! You try the handle but it won't open. Do you...")
+    print("A: Try the handle again.")
+    print("B: Try to pick the lock.")
+    print("C: Ask Mr. Holmes to open it.")
+    print("D: Cut and run")
+
+    while True:
+        answer = str(input())
+        if answer == "a" or answer == "A":
+            print("It's clearly locked, but keep trying, I'm sure it'll open at some stage.")
+            saferoom_door()
+        elif answer == "b" or answer == "B":
+            print("You take your trusty lockpick from your pocket and slip it into the keyhole. This shouldn't be too difficult...")
+            lockpicker()            
+        elif answer == "c" or answer == "C":
+            print("Taking complete leave of your senses, you knock on the bedroom door. A bleary eyed Holmes asnwers and you ask him for the key to his study.\n He responds by punching you squarely in the face, knocking you unconscious. You wake to find yourself locked in the wardrobe and police running through the house.")
+            game_over()
+        elif answer == "d" or answer == "D":
+            print("Quitting just before the end. You utter coward.")
+            wuss_out()
+        else:
+            print("Please choose a valid option")
+
 
 def last_room():
     """
