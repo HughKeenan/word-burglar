@@ -154,7 +154,7 @@ def trophy_trap():
 
     print("Starting to panic, you frantically turn around looking for a solution.\n You notice a placard has descended from the ceiling.")
     print("It says 'Your greed will be your undoing thief! Admit it and decipher my puzzle to be freed! What are you?!'")
-    print(f"Beneath the message you see {password_question}")
+    print(f"Beneath the message you see {password_question}. It must be an anagram! Unscramble the letters to solve it!")
     
     while True:
         answer = str(input("What do you admit to being? "))
@@ -298,8 +298,8 @@ def main():
     """
     The main function serving as the game's menu, allowing the player to input their name and start playing
     """
-    print("Welcome to Word Burglar. In this text-based game you will make choices to pull off a heist.\n Your objective is to find the priceless treasure hidden somewhere in the house.")
-    print("As you progress through the game, you will be presented with choices A-D as you enter each room.\n Make your choice by typing the letter corresponding to the one you want, followed by ENTER.")
+    print("Welcome to Word Burglar. In this text-based game you will make choices to try and pull off a heist.\n Your objective is to find the priceless treasure hidden somewhere in the house.")
+    print("As you progress through the game, you will be presented with choices as you enter each room.\n Make your choice by typing the letter corresponding to the one you want, followed by ENTER.")
     name = str(input("To begin, please enter your name: "))
     print(f"Welcome to the game {name}")
     intro()
