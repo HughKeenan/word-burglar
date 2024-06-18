@@ -81,7 +81,7 @@ def corridor():
             print("Glancing down the corridor, you walk down it a few paces to the next door and enter the trophy room.")
             trophy_room()
         elif answer == "d" or answer == "D":
-            print("Listening intently, you pad down the corridor towards your real prize.")
+            print("Listening intently, you pad down the corridor towards a locked door.")
             saferoom_door()
         elif answer == "e" or answer == "E":
             print("What, scared of the dark?")
@@ -189,6 +189,9 @@ def trophy_trap():
         else:
             print("Your inability to answer the question signals to the sawblades and they extend on their arms, cutting you to ribbons.")
             gruesome_death()
+
+def saferoom_door():
+    pass
 
 def last_room():
     """
