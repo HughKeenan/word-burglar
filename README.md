@@ -7,6 +7,8 @@ A bug arose also with the possibility of the player attempting to input a choice
 
 The function to call game over initially resulted in a dead end, this was fixed by implementing user input to allow the player to return to the intro screen or restart the game
 
+A bug arose with a list of strings, attempting to index it created an error saying the index was out of range. Re-examination of the code revealed that the list entries had all been set between a single set of quotation marks, meaning the list only had one entry, and nothing beyond that could be accessed 
+
 The function to generate the safe combination initially would not work, 
 
 Fixes:

@@ -108,7 +108,7 @@ def lounge():
             print("Heading over to the glass fronted liquor cabinet, you open it and take a huge gulp of brandy from one of the bottles.\n It immediately goes to your head and you dance around the room singing at the top of your voice, coming to your senses just in time to see the police car outside the window.")
             game_over()           
         elif answer == "c" or answer == "C":
-            print("Stalking over to the book, you reach out and grasp it with both hands")
+            print("Stalking over to the book, you reach out and grasp it with both hands. It doesn't move, and you hear a loud click.")
             lounge_trap()
         elif answer == "d" or answer == "D":
             print("Deciding that such valuables out in the open are probably too good to be true, you turn on your heel and return to the corridor.")
@@ -116,7 +116,32 @@ def lounge():
             print("Please choose a valid option")
 
 def lounge_trap():
-    pass
+    """
+    This function activates the trap minigame in the lounge room
+    """
+    print("A pair of manacles spring from the mantlepiece and snap shut around your wrists. You pull at them to no avail. Looking up, you see a metal spike emerging from a hole in the ceiling.")
+    print("It looks as though it's preparing to drop down and impale you! Looking around in desperation, you see words appear on the mirror:")
+    print("You've met your match brigand! I will release you only if you can choose the word that desribes your villany!")
+
+    options = ["puckerier", "pugilist", "pulldevil", "purpura", "purfler"]
+    required_word = "purloiner" 
+    choices = random.sample(options,2)
+
+    show_to_player = []
+    show_to_player.append(required_word)
+    show_to_player.extend(choices)
+
+    print(show_to_player)
+
+    while True:
+        answer = str(input("What word best describes you? "))
+        if answer == required_word:
+            print("With a grinding of gears, the spike retreats. Your wrists are released and you straighten up.")
+            print("Gold or no, that thing isn't worth it. Rubbing at your chafed skin, you retreat to the safety of the corridor.")
+            corridor()
+        else:
+            print("At your incorrect answer, the dull clunk of something unlocking sends a shiver through your spine. Moments later the spike follows it, buckling you under the impact.")
+            gruesome_death()
 
 def trophy_room():
     """
@@ -204,8 +229,6 @@ def safecracker():
     combination = []
     combination.append(known_number)
     combination.extend(code)
-    print(numbers)
-    print(combination)
 
     while True:
         solution = int(input("Please enter the first digit: "))
@@ -304,4 +327,4 @@ def main():
     print(f"Welcome to the game {name}")
     intro()
 
-trophy_trap()
+lounge_trap()
