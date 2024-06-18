@@ -212,6 +212,8 @@ def saferoom_door():
         else:
             print("Please choose a valid option")
 
+def lockpicker():
+    pass
 
 def last_room():
     """
