@@ -161,7 +161,7 @@ def trophy_room():
             print("In your haste to reach it, you don't notice the floor tile that depresses under your tread.\n Such is your speed that a clever mechanism intended to trap you instead scythes clean through your body, slicing you in two.")
             gruesome_death()
         elif answer == "c" or answer == "C":
-            print("Keeping an eye out, you approach the trophy. A tile depresses under your foot and you stumble forward.\n Getting to your feet, you see sawblades coming out of the hold and floor on long arms, preventing you from moving in any direction.")
+            print("Keeping an eye out, you approach the trophy. A tile depresses under your foot and you stumble forward.\n Getting to your feet, you see sawblades coming out of the walls and floor on long arms, preventing you from moving in any direction.")
             trophy_trap()
         elif answer == "d" or answer == "D":
             print("Remembering you've heard this guy's a nutjob, you decide not to risk whatever he cooked up in here and go back to the corridor")
@@ -175,7 +175,7 @@ def trophy_trap():
     """
     password = "avaricious"
     password_question = "".join(random.sample(password, len(password)))
-    print(password_question)
+    
 
     print("Starting to panic, you frantically turn around looking for a solution.\n You notice a placard has descended from the ceiling.")
     print("It says 'Your greed will be your undoing thief! Admit it and decipher my puzzle to be freed! What are you?!'")
@@ -330,4 +330,4 @@ def main():
     print(f"Welcome to the game {name}")
     intro()
 
-lounge_trap()
+main()
