@@ -269,7 +269,7 @@ def last_room():
     """
     Player Choices for the last room
     """
-    print("Closing the door, you look around the room. it's Holmes' office. Remembering what you saw when casing the house, you remove a painting from the back wall, revealing a small safe. Do you...")
+    print("Closing the door, you look around the room. It's Holmes' office. Remembering what you saw when casing the house, you remove a painting from the back wall, revealing a small safe. Do you...")
     print("A: Open the safe")
     print("B: Go back to corridor")
     print("C: Cut and run")
@@ -277,11 +277,14 @@ def last_room():
     while True:
         answer = str(input())
         if answer == "a" or answer == "A":
+            print("Taking a deep breath to steady yourself, you decide it's all or nothing.")
             safecracker()  
         elif answer == "b" or answer == "B":
-            first_room()
+            print("Thinking you heard a noise outside, you go back out to the corridor and check. There's nothing there, but you hear the office door shut behind you. Trying the handle you find it has locked itself automatically, you'll have to open it again.")
+            lockpicker()
         elif answer == "c" or answer == "C":
-            game_over()    
+            print("... I mean ... just why?")
+            wuss_out()    
         else:
             print("Please choose a valid option")
 
@@ -289,7 +292,7 @@ def safecracker():
     """
     This function is a random number generator, the player must guess the safe code to win the final prize
     """
-    print("You approach the safe. On the front is a keypad with numbers 0 - 3.")
+    print("You approach the safe. On the front is a keypad showing the numbers 0 - 3.")
     print("You remember from casing the house that the code is 3 digits long and the first one is 2. If you get any digit wrong you'll have to go back to the start of the sequence.")
     print("Be careful! You've seen this kind of safe before!")
     print("If you enter more than 6 wrong numbers, it will set off the alarm and the police will be here in minutes!")
@@ -341,7 +344,9 @@ def game_won():
     """
     Ends the game in a victory state
     """
-    print("You Win!")
+    print("The safe door swings open. Hardly daring to believe it, you reach in and grasp the contents with trembling hands")
+    print("Finally! After all this time, you can prove that you are the ultimate Word Burglar!")
+    print("You hold it up to a shaft of moonlight streaming in through the window, and examine the ultimate prize:")
 
 def game_over():
     """
