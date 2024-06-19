@@ -9,6 +9,8 @@ The function to call game over initially resulted in a dead end, this was fixed 
 
 A bug arose with a list of strings, attempting to index it created an error saying the index was out of range. Re-examination of the code revealed that the list entries had all been set between a single set of quotation marks, meaning the list only had one entry, and nothing beyond that could be accessed 
 
+The lockpicker function when first written displayed the prompt to move the lockpick twice for the second and third prompts.
+
 The function to generate the safe combination initially would not work, 
 
 Fixes:

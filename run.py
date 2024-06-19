@@ -213,7 +213,54 @@ def saferoom_door():
             print("Please choose a valid option")
 
 def lockpicker():
-    pass
+    print("Crounching down with the lock at eye level, you prepare to pick the lock, listening intently for any click to tell you it's opening.")
+    print("It looks like a normal 3 pin lock, so 3 clicks and it's open.")
+    print("If you move the lock in the wrong direction, you'll have to go back to the start. Go easy, you only have 1 pick and it's delicate, move it in the wrong direction 3 times and it'll snap.")
+    print("Type in the direction you wish to move the pick: 'UP', 'DOWN', 'LEFT' or 'RIGHT' and press ENTER")
+
+    turns_to_break = 3
+
+    pin_one = "UP" 
+    pin_two = "LEFT"
+    pin_three = "RIGHT"
+
+    while True:
+        path_to_open = (input("Which direction do you move the pick: "))
+        if path_to_open == pin_one:
+            print("Click!")
+            path_to_open_2 = (input("Which direction do you move the pick: "))
+            if path_to_open_2 == pin_two:
+                print("Click!")    
+                path_to_open_3 = (input("Which direction do you move the pick: "))
+                if path_to_open_3 == pin_three:
+                    print("Click!")
+                    print("Nice! Silently you open the door and slip inside.")
+                    last_room()
+                    break
+                else:
+                    print("Clunk! That's not right!")
+                    print("You think back to the rhyme you made up while practicing on locks like this one: 'The sun came up in the morning, left the east and headed right on to the west'")
+                    turns_to_break -=1
+                    print(f"{turns_to_break} wrong moves until the pick breaks")
+                    if turns_to_break == 0:
+                        print("The lockpick snaps in the keyhole. You curse in frustration and kick the door, then turn to see a very angry looking Mr. Holmes, one hand pointing a revolver at you and the other calling the police.")
+                        game_over()
+            else:
+                print("Clunk! That's not right!")
+                print("You think back to the rhyme you made up while practicing on locks like this one: 'The sun came up in the morning, left the east and headed right on to the west'")
+                turns_to_break -=1
+                print(f"{turns_to_break} wrong moves until the pick breaks")
+                if turns_to_break == 0:
+                    print("The lockpick snaps in the keyhole. You curse in frustration and kick the door, then turn to see a very angry looking Mr. Holmes, one hand pointing a revolver at you and the other calling the police.")
+                    game_over()
+        else:
+            print("Clunk! That's not right!")
+            print("You think back to the rhyme you made up while practicing on locks like this one: 'The sun came up in the morning, left the east and headed right on to the west'")
+            turns_to_break -=1
+            print(f"{turns_to_break} wrong moves until the pick breaks")
+            if turns_to_break == 0:
+                print("The lockpick snaps in the keyhole. You curse in frustration and kick the door, then turn to see a very angry looking Mr. Holmes, one hand pointing a revolver at you and the other calling the police.")
+                game_over()
 
 def last_room():
     """
@@ -352,4 +399,4 @@ def main():
     print(f"Welcome to the game {name}")
     intro()
 
-main()
+lockpicker()
