@@ -213,6 +213,9 @@ def saferoom_door():
             print("Please choose a valid option")
 
 def lockpicker():
+    """
+    This function provides a minigame based on player input
+    """
     print("Crounching down with the lock at eye level, you prepare to pick the lock, listening intently for any click to tell you it's opening.")
     print("It looks like a normal 3 pin lock, so 3 clicks and it's open.")
     print("If you move the lock in the wrong direction, you'll have to go back to the start. Go easy, you only have 1 pick and it's delicate, move it in the wrong direction 3 times and it'll snap.")
@@ -266,10 +269,10 @@ def last_room():
     """
     Player Choices for the last room
     """
-    print("You are in the last room. Do you...")
+    print("Closing the door, you look around the room. it's Holmes' office. Remembering what you saw when casing the house, you remove a painting from the back wall, revealing a small safe. Do you...")
     print("A: Open the safe")
-    print("B: Go back to the first room")
-    print("C: Wake the residents up and surrender")
+    print("B: Go back to corridor")
+    print("C: Cut and run")
 
     while True:
         answer = str(input())
