@@ -1,34 +1,45 @@
 import random
 
+
 def intro():
     """
     This function is the beginning of the game
     """
-    print("After long preparations, you are finally ready to pull off your heist of the great treasure in Mr. Holmes' residence.")
-    print("You've heard his house is a bit weird, but that won't stop you.\nYou know his schedule and he should be asleep by now. Time to get to work.")
-    print("Approaching the house, you see a window beside the front door.\nDo you...")
+    print("After long preparations, you are finally ready")
+    print("Tonight is your heist of the treasure in Mr. Holmes' residence.")
+    print("You've heard his house is a bit weird, but that won't stop you.")
+    print("You know his schedule and he should be asleep. Let's get to work.")
+    print("Approaching the house, you see a window beside the front door.")
+
+    print("Do you...")
     print("A: Kick the door down")
     print("B: Break the window")
     print("C: Open the window quietly")
     print("D: Cut and run")
 
-    #This while loop lets the player choose how they want to proceed
+    # This while loop lets the player choose how they want to proceed
     while True:
         answer = str(input("What is your choice? "))
         if answer == "a" or answer == "A":
-            print("Boldly striding up to the front door, you aim a mighty kick at it and drive your foot home.\nYour foot goes straight into the letterbox, whereupon it becomes stuck.")
-            game_over()  
-        elif answer == "b" or answer == "B":
-            print("Sneaking around to the side of the house, you put your elbow through the window.\nIt shatters and slices a deep gash in your arm, causing you to scream in agony.")
+            print("Striding up to the door, you drive a mighty kick at it.")
+            print("Your foot goes into the letterbox, where it becomes stuck.")
+            print("One of the neighbours sees you and calls the police")
             game_over()
-        elif answer == "c" or answer == "C":     
-            print("Taking a thin knife from your pocket, you jemmy open the window quietly and slip inside.")
+        elif answer == "b" or answer == "B":
+            print("Going to the window, you put your elbow through it.")
+            print("It shatters, gashing your arm. You to scream in agony.")
+            print("One of the nighbours who heard has called the police.")
+            game_over()
+        elif answer == "c" or answer == "C":
+            print("You take a thin knife from your pocket.")
+            print("You jemmy open the window and slip inside.")
             first_room()
         elif answer == "d" or answer == "D":
-            print("For reasons known only to yourself, you wuss out at the very first hurdle. Pathetic.")
+            print("You wuss out at the very first hurdle. Pathetic.")
             wuss_out()
         else:
             print("Please choose a valid option")
+
 
 def first_room():
     """
@@ -40,29 +51,35 @@ def first_room():
     print("C: Check the room for valuables")
     print("D: Cut and run")
 
-    #This while loop lets the player choose how they want to proceed
+    # This while loop lets the player choose how they want to proceed
     while True:
         answer = str(input("What is your choice? "))
         if answer == "a" or answer == "A":
-            print("Sprinting towards the door, you fail to notice the coffee table a few feet in front of you.\nTripping over it, you fall face first onto the floor and suffer a severe concussion.")
-            game_over()  
+            print("You sprint to the door, not noticing the coffee table.")
+            print("Tripping over it, you faceplant onto the floor, concussed.")
+            game_over()
         elif answer == "b" or answer == "B":
-            print("Carefully you proceed to the door, taking care not to hit off the coffee table and make a noise.")
+            print("You proceed, taking care not to hit the coffee table.")
             corridor()
         elif answer == "c" or answer == "C":
-            print("Crouching down so as not to be seen, you do a thorough inventory of the room, but what you're looking for isn't here.")
-            first_room()   
+            print("You crouch down so as not to be seen.")
+            print("You do a thorough inventory of the room.")
+            print("What you're looking for isn't here.")
+            first_room()
         elif answer == "d" or answer == "D":
             print("At least you made it inside.")
-            wuss_out()     
+            wuss_out()
         else:
             print("Please choose a valid option")
 
 def corridor():
     """
-    This function acts as the main hub of the game, from which the player can head to the ending or try optional challenges
+    This function acts as the main hub of the game. 
+    From here the player can head to the ending 
+    or try optional challenges
     """
-    print("Closing the door softly behind you, you find yourself in the house's shadowy corridor.\nDo you...")
+    print("Closing the door softly, you find yourself in the house's shadowy corridor.")
+    print("Do you...")
     print("A: Go into the nearby bathroom.")
     print("B: Head into the lounge.")
     print("C: Head into the trophy room.")
