@@ -403,36 +403,43 @@ def last_room():
 
 def safecracker():
     """
-    This function is a random number generator, the player must guess the safe code to win the final prize
+    This function is a random number generator.
+    The player must guess the safe code to win the final prize
     """
-    print("You approach the safe. On the front is a keypad showing the numbers 0 - 3.")
-    print("You remember from casing the house that the code is 3 digits long and the first one is 2.\nIf you get any digit wrong you'll have to go back to the start of the sequence.")
+    print("You approach the safe.")
+    print("On the front is a keypad showing the numbers 0 - 3.")
+    print("You remember from casing the house that the code is 3 digits long.")
+    print("The first one is 2.")
+    print("If you get any digit wrong you'll have to start again.")
     print("Be careful! You've seen this kind of safe before!")
-    print("If you enter more than 6 wrong numbers, it will set off the alarm and the police will be here in minutes!")
+    print("Don't enter more than 6 wrong numbers!")
+    print("That will trip the alarm and the police will be here in minutes!")
 
-    # The numbers variable is a list comprehension of the numbers 0-3, creating a list of those numbers
+    # The numbers variable is a list comprehension of the numbers 0-3
+    # It creates a list of those numbers
     numbers = [x for x in range(4)]
     attempts = 6
 
     known_number = 2
 
-    code = random.sample(numbers,2)
+    code = random.sample(numbers, 2)
 
-    #combination creates an empty list, to which the 3 digits of the combination are added
+    # combination creates an empty list
+    # The 3 digits of the combination are added to this
     combination = []
     combination.append(known_number)
     combination.extend(code)
 
-    #This lets the player guess the digits of the combination
-    #on a wrong choice, the player must start again from the beginning
-    #if the player answers wrongly 6 times, they lose the game
+    # This lets the player guess the digits of the combination
+    # on a wrong choice, the player must start again
+    # if the player answers wrongly 6 times, they lose the game
     while True:
         solution = int(input("Please enter the first digit: "))
         if solution == known_number:
             print("Correct!")
             solution2 = int(input("Please enter the second digit: "))
             if solution2 == combination[1]:
-                print("Correct!")    
+                print("Correct!")
                 solution3 = int(input("Please enter the final digit: "))
                 if solution3 == combination[2]:
                     print("You did it!")
@@ -440,22 +447,23 @@ def safecracker():
                     break
                 else:
                     print("Wrong, start again")
-                    attempts -=1
+                    attempts -= 1
                     print(f"{attempts} attempts remaining")
                 if attempts == 0:
-                    game_over()    
+                    game_over()
             else:
                 print("Wrong, start again")
-                attempts -=1
+                attempts -= 1
                 print(f"{attempts} attempts remaining")
                 if attempts == 0:
                     game_over()
         else:
             print("What are you doing?! You know this one!")
-            attempts -=1
+            attempts -= 1
             print(f"{attempts} attempts remaining")
             if attempts == 0:
-                game_over()               
+                game_over()
+
 
 def game_won():
     """
