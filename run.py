@@ -232,26 +232,34 @@ def trophy_room():
         else:
             print("Please choose a valid option")
 
+
 def trophy_trap():
     """
-    Provides an optional puzzle by asking the player to solve a word puzzle formed from rearranged letters in a string
+    Provides an optional puzzle by asking the player to
+    solve a word puzzle formed from rearranged letters in a string
     """
     password = "AVARICIOUS"
-    #The password_question variable rearranges the password letters at random, creating a puzzle for the player
+    # password_question rearranges the password letters
+    # this creates a puzzle for the player
     password_question = "".join(random.sample(password, len(password)))
-    
-    print("Starting to panic, you frantically turn around looking for a solution.\nYou notice a placard has descended from the ceiling.")
-    print("It says 'Your greed will be your undoing thief! Admit it and decipher my puzzle to be freed! What are you?!'")
-    print(f"Beneath the message you see {password_question}.\nIt must be an anagram! Unscramble the letters and find the word to solve it!")
-    
-    #This while loop lets the player choose how they want to proceed
+
+    print("Starting to panic, you look for a solution.")
+    print("You notice a placard has descended from the ceiling.")
+    print("It says 'Your greed will be your undoing thief!")
+    print("Admit it and decipher my puzzle to be freed! What are you?!'")
+    print(f"Beneath the message you see {password_question}")
+    print("It must be an anagram!")
+    print("Unscramble the letters and find the word to solve it!")
+    # This while loop lets the player choose how they want to proceed
     while True:
         answer = str(input("What do you admit to being? ")).upper()
         if answer == password:
-            print("The sawblades retract and you heave a sigh of relief.\nDeciding to leave the trophy where it is, you waste no time in leaving the room.")
+            print("The sawblades retract and you sigh in relief.")
+            print("Deciding to leave the trophy, you leave the room.")
             corridor()
         else:
-            print("Your inability to answer the question signals to the sawblades and they extend on their arms, cutting you to ribbons.")
+            print("Your wrong answer the question signals to the sawblades.")
+            print("They extend on their arms, cutting you to ribbons.")
             gruesome_death()
 
 def saferoom_door():
