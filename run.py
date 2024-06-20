@@ -196,29 +196,39 @@ def lounge_trap():
 
 def trophy_room():
     """
-    This function allows the player to enter the trophy room and choose whether to engage with an optional puzzle 
+    This function allows the player to enter the trophy room
+    Here, they choose whether to engage with an optional puzzle
     """
-    print("Closing the door behind you, you see the room is bare, save for the large golden trophy set on a pedastal in the centre.\nDo you...")
+    print("Closing the door behind you, you see the room is bare.")
+    print("Save the golden trophy set on a pedastal in the centre.")
+    print("Do you...")
     print("A: Look around the room.")
     print("B: Run straight up to the trophy and take it. Shiny!")
     print("C: Cautiously approach the trophy.")
     print("D: Go back to the corridor, this seems off.")
 
-    #This while loop lets the player choose how they want to proceed
+    # This while loop lets the player choose how they want to proceed
     while True:
         answer = str(input("What is your choice? "))
         if answer == "a" or answer == "A":
-            print("You look carefully into every nook and cranny around the edge of the room, but nothing catches your eye.\nMaybe he's just weirdly proud of his trophy.\nYou even open the door and peek out into the corridor but there's nothing there.")
+            print("You peer into each nook and cranny around the room's edge.")
+            print("Nothing catches your eye.")
+            print("You open the door and peek into the corridor. Nothing.")
             trophy_room()
         elif answer == "b" or answer == "B":
-            print("In your haste to reach it, you don't notice the floor tile that depresses under your tread.\nSuch is your speed that a clever mechanism intended to trap you instead scythes clean through your body, slicing you in two.")
+            print("Hurrying to it, you don't notice a tile sink underfoot.")
+            print("You ran too fast.")
+            print("A mechanism intended to trap you instead cuts you in two.")
             gruesome_death()
         elif answer == "c" or answer == "C":
-            print("Keeping an eye out, you approach the trophy. A tile depresses under your foot and you stumble forward.\nGetting to your feet, you see sawblades coming out of the walls and floor on long arms, preventing you from moving in any direction.")
+            print("Keeping an eye out, you approach the trophy.")
+            print("A tile depresses under your foot and you stumble forward.")
+            print("Rising, you see saws coming out of the walls and floor.")
+            print("You're prevented from moving in any direction.")
             trophy_trap()
         elif answer == "d" or answer == "D":
-            print("Remembering you've heard this guy's a nutjob, you decide not to risk whatever he cooked up in here and go back to the corridor")
-            corridor()     
+            print("You decide not to risk it and go back to the corridor.")
+            corridor()
         else:
             print("Please choose a valid option")
 
