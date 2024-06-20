@@ -12,6 +12,7 @@ def intro():
     print("Approaching the house, you see a window beside the front door.")
 
     print("Do you...")
+
     print("A: Kick the door down")
     print("B: Break the window")
     print("C: Open the window quietly")
@@ -47,6 +48,7 @@ def first_room():
     """
     print("Straightening up, you look around the dark room.")
     print("Do you...")
+
     print("A: Run to the door. Let's get this over with and get out!")
     print("B: Quietly proceed to the door")
     print("C: Check the room for valuables")
@@ -82,6 +84,7 @@ def corridor():
     """
     print("Closing the door, you find yourself in the shadowy corridor.")
     print("Do you...")
+
     print("A: Go into the nearby bathroom.")
     print("B: Head into the lounge.")
     print("C: Head into the trophy room.")
@@ -121,6 +124,7 @@ def lounge():
     print("The lounge is richly furnished.")
     print("You see a book bound in gold on the mantlepiece.")
     print("Do you...")
+
     print("A: Pick up the book.")
     print("B: Check out the liquor cabinet.")
     print("C: Sit on the couch and take a load off.")
@@ -167,6 +171,7 @@ def lounge_trap():
 
     options = ["PUCKERIER", "PUGILIST", "PULLDEVIL", "PURPURA", "PURFLER"]
     required_word = "PURLOINER"
+
     # The choices variable selects 2 entries at random from the options list
     choices = random.sample(options, 2)
 
@@ -203,6 +208,7 @@ def trophy_room():
     print("Closing the door behind you, you see the room is bare.")
     print("Save the golden trophy set on a pedastal in the centre.")
     print("Do you...")
+
     print("A: Look around the room.")
     print("B: Run straight up to the trophy and take it. Shiny!")
     print("C: Cautiously approach the trophy.")
@@ -240,6 +246,7 @@ def trophy_trap():
     solve a word puzzle formed from rearranged letters in a string
     """
     password = "AVARICIOUS"
+
     # password_question rearranges the password letters
     # this creates a puzzle for the player
     password_question = "".join(random.sample(password, len(password)))
@@ -251,6 +258,7 @@ def trophy_trap():
     print(f"Beneath the message you see {password_question}")
     print("It must be an anagram!")
     print("Unscramble the letters and find the word to solve it!")
+
     # This while loop lets the player choose how they want to proceed
     while True:
         answer = str(input("What do you admit to being? ")).upper()
@@ -269,6 +277,7 @@ def saferoom_door():
     print("The only other room is Holmes' bedroom, so this must be it!")
     print("You try the handle but it won't open.")
     print("Do you...")
+
     print("A: Try the handle again.")
     print("B: Try to pick the lock.")
     print("C: Ask Mr. Holmes to open it.")
@@ -380,6 +389,7 @@ def last_room():
     print("Remembering casing the house, you take a painting off the wall.")
     print("It reveals a small safe.")
     print("Do you...")
+
     print("A: Open the safe")
     print("B: Go back to corridor")
     print("C: Cut and run")
@@ -487,6 +497,7 @@ def game_over():
     print("They tackle you and cuff your hands behind your back.")
     print("You will be going to prison for a very long time.")
     print("GAME OVER")
+
     # This lets the player choose whether to restart on a game over
     while True:
         answer = str(input("Would you like to play again? Please type Y/N: "))
@@ -504,6 +515,7 @@ def gruesome_death():
     """
     print("You lie on the floor as your blood pools around you.")
     print("You wish you had listened when people said this wasn't worth it.")
+
     # This lets the player choose whether to restart on a game over
     while True:
         answer = str(input("Would you like to play again? Please type Y/N: "))
@@ -521,6 +533,7 @@ def wuss_out():
     """
     print("Red faced and blinded by tears of humiliation, you slink away.")
     print("Defeated, you know you never had what it took to pull this off.")
+
     # This lets the player choose whether to restart on a game over
     while True:
         answer = str(input("Would you like to play again? Please type Y/N: "))
@@ -542,6 +555,7 @@ def main():
     print("Your objective is to find the treasure hidden in the house.")
     print("As you progress, you will be presented with choices in each room.")
     print("Make your choice by typing the corresponding letter, then ENTER")
+
     # This lets the player input a name
     # Names cannot be longer than 15 characters
     while True:
