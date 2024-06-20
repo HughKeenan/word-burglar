@@ -26,18 +26,22 @@ def intro():
             print("Your foot goes into the letterbox, where it becomes stuck.")
             print("One of the neighbours sees you and calls the police")
             game_over()
+            break
         elif answer == "b" or answer == "B":
             print("Going to the window, you put your elbow through it.")
             print("It shatters, gashing your arm. You to scream in agony.")
             print("One of the nighbours who heard has called the police.")
             game_over()
+            break
         elif answer == "c" or answer == "C":
             print("You take a thin knife from your pocket.")
             print("You jemmy open the window and slip inside.")
             first_room()
+            break
         elif answer == "d" or answer == "D":
             print("You wuss out at the very first hurdle. Pathetic.")
             wuss_out()
+            break
         else:
             print("Please choose a valid option")
 
@@ -61,17 +65,21 @@ def first_room():
             print("You sprint to the door, not noticing the coffee table.")
             print("Tripping over it, you faceplant onto the floor, concussed.")
             game_over()
+            break
         elif answer == "b" or answer == "B":
             print("You proceed, taking care not to hit the coffee table.")
             corridor()
+            break
         elif answer == "c" or answer == "C":
             print("You crouch down so as not to be seen.")
             print("You do a thorough inventory of the room.")
             print("What you're looking for isn't here.")
             first_room()
+            break
         elif answer == "d" or answer == "D":
             print("At least you made it inside.")
             wuss_out()
+            break
         else:
             print("Please choose a valid option")
 
@@ -98,20 +106,25 @@ def corridor():
             print("What are you doing?!")
             print("This is Word Burglar, not Turd Burlgar!")
             corridor()
+            break
         elif answer == "b" or answer == "B":
             print("You head to the door directly opposite.")
             print("You gently open it and slip into the lounge.")
             lounge()
+            break
         elif answer == "c" or answer == "C":
             print("Glancing down the corridor, you walk down it a few paces.")
             print("You reach the next door and enter the trophy room.")
             trophy_room()
+            break
         elif answer == "d" or answer == "D":
             print("Listening intently, you pad towards another door.")
             saferoom_door()
+            break
         elif answer == "e" or answer == "E":
             print("What, scared of the dark?")
             wuss_out()
+            break
         else:
             print("Please choose a valid option")
 
@@ -137,6 +150,7 @@ def lounge():
             print("Stalking to the book, you reach out and grasp it.")
             print("It doesn't move, and you hear a loud click.")
             lounge_trap()
+            break
         elif answer == "b" or answer == "B":
             print("You head over to the glass fronted liquor cabinet.")
             print("You open it and take a big gulp of brandy from one bottle.")
@@ -144,15 +158,18 @@ def lounge():
             print("You dance around the room singing like an idiot.")
             print("You recover just in time to see the police car outside.")
             game_over()
+            break
         elif answer == "c" or answer == "C":
             print("You plonk down on the couch, raising a huge cloud of dust.")
             print("You to erupt into paralysing and loud coughs and sneezes.")
             print("You have woken Mr. Holmes and he is calling the police.")
             game_over()
+            break
         elif answer == "d" or answer == "D":
             print("Valuables in the open are probably too good to be true.")
             print("You turn on your heel and return to the corridor.")
             corridor()
+            break
         else:
             print("Please choose a valid option")
 
@@ -193,6 +210,7 @@ def lounge_trap():
             print("Gold or no, that thing isn't worth it.")
             print("Rubbing at your wrists, you retreat to the corridor.")
             corridor()
+            break
         else:
             print("This was incorrect.")
             print("A dull clunk sends a shiver through your spine.")
@@ -222,20 +240,24 @@ def trophy_room():
             print("Nothing catches your eye.")
             print("You open the door and peek into the corridor. Nothing.")
             trophy_room()
+            break
         elif answer == "b" or answer == "B":
             print("Hurrying to it, you don't notice a tile sink underfoot.")
             print("You ran too fast.")
             print("A mechanism intended to trap you instead cuts you in two.")
             gruesome_death()
+            break
         elif answer == "c" or answer == "C":
             print("Keeping an eye out, you approach the trophy.")
             print("A tile depresses under your foot and you stumble forward.")
             print("Rising, you see saws coming out of the walls and floor.")
             print("You're prevented from moving in any direction.")
             trophy_trap()
+            break
         elif answer == "d" or answer == "D":
             print("You decide not to risk it and go back to the corridor.")
             corridor()
+            break
         else:
             print("Please choose a valid option")
 
@@ -266,6 +288,7 @@ def trophy_trap():
             print("The sawblades retract and you sigh in relief.")
             print("Deciding to leave the trophy, you leave the room.")
             corridor()
+            break
         else:
             print("Your wrong answer the question signals to the sawblades.")
             print("They extend on their arms, cutting you to ribbons.")
@@ -290,19 +313,23 @@ def saferoom_door():
             print("It's clearly locked, but keep trying.")
             print("I'm sure it'll open at some stage.")
             saferoom_door()
+            break
         elif answer == "b" or answer == "B":
             print("You take your trusty lockpick from your pocket.")
             print("This shouldn't be too difficult...")
             lockpicker()
+            break
         elif answer == "c" or answer == "C":
             print("Taking leave of your senses, you bang on the bedroom door.")
             print("A bleary eyed Holmes answers and you ask him for the key.")
             print("He responds by punching you in the face, knocking you out.")
             print("You wake, locked in the wardrobe with police on the scene.")
             game_over()
+            break
         elif answer == "d" or answer == "D":
             print("Quitting just before the end. You utter coward.")
             wuss_out()
+            break
         else:
             print("Please choose a valid option")
 
@@ -410,6 +437,7 @@ def last_room():
         elif answer == "c" or answer == "C":
             print("...\nI mean...just why?")
             wuss_out()
+            break
         else:
             print("Please choose a valid option")
 
