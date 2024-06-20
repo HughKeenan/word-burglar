@@ -599,4 +599,4 @@ def main():
             break
 
 
-safecracker()
+main()
