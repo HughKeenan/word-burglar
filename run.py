@@ -262,24 +262,33 @@ def trophy_trap():
             print("They extend on their arms, cutting you to ribbons.")
             gruesome_death()
 
+
 def saferoom_door():
-    print("Your head is on a swivel at this final door.\nThe only other room is Holmes' bedroom, so this must be it!\nYou try the handle but it won't open.\nDo you...")
+    print("Your head is on a swivel at this final door.")
+    print("The only other room is Holmes' bedroom, so this must be it!")
+    print("You try the handle but it won't open.")
+    print("Do you...")
     print("A: Try the handle again.")
     print("B: Try to pick the lock.")
     print("C: Ask Mr. Holmes to open it.")
     print("D: Cut and run")
 
-    #This while loop lets the player choose how they want to proceed
+    # This while loop lets the player choose how they want to proceed
     while True:
         answer = str(input("What is your choice? "))
         if answer == "a" or answer == "A":
-            print("It's clearly locked, but keep trying, I'm sure it'll open at some stage.")
+            print("It's clearly locked, but keep trying.")
+            print("I'm sure it'll open at some stage.")
             saferoom_door()
         elif answer == "b" or answer == "B":
-            print("You take your trusty lockpick from your pocket and slip it into the keyhole.\nThis shouldn't be too difficult...")
-            lockpicker()            
+            print("You take your trusty lockpick from your pocket.")
+            print("This shouldn't be too difficult...")
+            lockpicker()
         elif answer == "c" or answer == "C":
-            print("Taking complete leave of your senses, you knock on the bedroom door.\nA bleary eyed Holmes asnwers and you ask him for the key to his study.\nHe responds by punching you squarely in the face, knocking you unconscious.\nYou wake to find yourself locked in the wardrobe and police running through the house.")
+            print("Taking leave of your senses, you knock on the bedroom door.")
+            print("A bleary eyed Holmes answers and you ask him for the key.")
+            print("He responds by punching you in the face, knocking you out.")
+            print("You wake, locked in the wardrobe with police on the scene.")
             game_over()
         elif answer == "d" or answer == "D":
             print("Quitting just before the end. You utter coward.")
