@@ -469,9 +469,11 @@ def game_won():
     """
     Ends the game in a victory state
     """
-    print("The safe door swings open. Hardly daring to believe it, you reach in and grasp the contents with trembling hands")
-    print("Finally! After all this time, you can prove that you are the ultimate Word Burglar!")
-    print("You hold it up to a shaft of moonlight streaming in through the window, and examine the ultimate prize:")
+    print("The safe door swings open.")
+    print("Hardly daring to believe, you grasp the prize with trembling hands")
+    print("Finally! You can prove that you are the ultimate Word Burglar!")
+    print("You hold it up to a shaft of moonlight.")
+    print("You can clrearly see the ultimate prize:")
     print("Mr. Holmes' Thesaurus!")
 
 def game_over():
