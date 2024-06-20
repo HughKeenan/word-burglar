@@ -1,14 +1,10 @@
-import os
-import random
-from random import shuffle 
-
 def intro():
     """
     This function is the beginning of the game
     """
     print("After long preparations, you are finally ready to pull off your heist of the great treasure in Mr. Holmes' residence.")
-    print("You've heard his house is a bit weird, but that won't stop you. You know his schedule and he should be asleep by now. Time to get to work.")
-    print("Approaching the house, you see a window beside the front door. Do you...")
+    print("You've heard his house is a bit weird, but that won't stop you.\nYou know his schedule and he should be asleep by now. Time to get to work.")
+    print("Approaching the house, you see a window beside the front door.\nDo you...")
     print("A: Kick the door down")
     print("B: Break the window")
     print("C: Open the window quietly")
@@ -20,7 +16,7 @@ def intro():
             print("Boldly striding up to the front door, you aim a mighty kick at it and drive your foot home.\nYour foot goes straight into the letterbox, whereupon it becomes stuck.")
             game_over()  
         elif answer == "b" or answer == "B":
-            print("Sneaking around to the side of the house, you put your elbow through the window. It shatters and slices a deep gash in your arm, causing you to scream in agony.")
+            print("Sneaking around to the side of the house, you put your elbow through the window.\nIt shatters and slices a deep gash in your arm, causing you to scream in agony.")
             game_over()
         elif answer == "c" or answer == "C":     
             print("Taking a thin knife from your pocket, you jemmy open the window quietly and slip inside.")
@@ -35,7 +31,7 @@ def first_room():
     """
     Player choices for the first room
     """
-    print("Straightening up, you look around the dark room. Do you...")
+    print("Straightening up, you look around the dark room.\nDo you...")
     print("A: Run to the door. Let's get this over with and get out!")
     print("B: Quietly proceed to the door")
     print("C: Check the room for valuables")
@@ -44,7 +40,7 @@ def first_room():
     while True:
         answer = str(input())
         if answer == "a" or answer == "A":
-            print("Sprinting towards the door, you fail to notice the coffee table a few feet in front of you. Tripping over it, you fall face first into the floor and suffer a severe concussion.")
+            print("Sprinting towards the door, you fail to notice the coffee table a few feet in front of you.\nTripping over it, you fall face first onto the floor and suffer a severe concussion.")
             game_over()  
         elif answer == "b" or answer == "B":
             print("Carefully you proceed to the door, taking care not to hit off the coffee table and make a noise.")
@@ -62,7 +58,7 @@ def corridor():
     """
     This function acts as the main hub of the game, from which the player can head to the ending or try optional challenges
     """
-    print("Closing the door softly behind you, you find yourself in the house's shadowy corridor. Do you...")
+    print("Closing the door softly behind you, you find yourself in the house's shadowy corridor.\nDo you...")
     print("A: Go into the nearby bathroom.")
     print("B: Head into the lounge.")
     print("C: Head into the trophy room.")
@@ -75,7 +71,7 @@ def corridor():
             print("What are you doing?! This is Word Burglar, not Turd Burlgar!")
             corridor()
         elif answer == "b" or answer == "B":
-            print("Heading to the door directly opposite you, you gently open it and slip into the lounge")
+            print("Heading to the door directly opposite you, you gently open it and slip into the lounge.")
             lounge()
         elif answer == "c" or answer == "C":
             print("Glancing down the corridor, you walk down it a few paces to the next door and enter the trophy room.")
@@ -91,9 +87,9 @@ def corridor():
 
 def lounge():
     """
-    This function brings the player into the lounge, where they can encounter another puzzle
+    This function brings the player into the lounge, where they can encounter an optional puzzle
     """
-    print("The lounge is richly furnished, you see a book bound in what looks like gold on the mantlepiece. Do you...")
+    print("The lounge is richly furnished, you see a book bound in what looks like gold on the mantlepiece.\nDo you...")
     print("A: Pick up the book.")
     print("B: Check out the liquor cabinet.")
     print("C: Sit on the couch and take a load off.")
@@ -105,10 +101,10 @@ def lounge():
             print("Stalking over to the book, you reach out and grasp it with both hands. It doesn't move, and you hear a loud click.")
             lounge_trap()            
         elif answer == "b" or answer == "B":
-            print("Heading over to the glass fronted liquor cabinet, you open it and take a huge gulp of brandy from one of the bottles.\n It immediately goes to your head and you dance around the room singing at the top of your voice, coming to your senses just in time to see the police car outside the window.")
+            print("Heading over to the glass fronted liquor cabinet, you open it and take a huge gulp of brandy from one of the bottles.\nIt immediately goes to your head and you dance around the room singing at the top of your voice.\nYou come to your senses just in time to see the police car outside the window.")
             game_over()           
         elif answer == "c" or answer == "C":
-            print("You plonk down on the couch, raising a huge cloud of dust and causing you to erupt into paralysing and cacaphonous coughs and sneezes.\n You have woken Mr. Holmes and he is now calling the police.")
+            print("You plonk down on the couch, raising a huge cloud of dust and causing you to erupt into paralysing and cacaphonous coughs and sneezes.\nYou have woken Mr. Holmes and he is now calling the police.")
             game_over()
         elif answer == "d" or answer == "D":
             print("Deciding that such valuables out in the open are probably too good to be true, you turn on your heel and return to the corridor.")
@@ -119,8 +115,8 @@ def lounge_trap():
     """
     This function activates the trap minigame in the lounge room
     """
-    print("A pair of manacles spring from the mantlepiece and snap shut around your wrists. You pull at them to no avail. Looking up, you see a metal spike emerging from a hole in the ceiling.")
-    print("It looks as though it's preparing to drop down and impale you! Looking around in desperation, you see words appear on the mirror:")
+    print("A pair of manacles spring from the mantlepiece and snap shut around your wrists. You pull at them to no avail.\nLooking up, you see a metal spike emerging from a hole in the ceiling.")
+    print("It looks as though it's preparing to drop down and impale you!\nLooking around in desperation, you see words appear on the mirror:")
     print("You've met your match brigand! I will release you only if you can choose the word that desribes your villany!")
 
     options = ["puckerier", "pugilist", "pulldevil", "purpura", "purfler"]
@@ -140,14 +136,14 @@ def lounge_trap():
             print("Gold or no, that thing isn't worth it. Rubbing at your chafed skin, you retreat to the safety of the corridor.")
             corridor()
         else:
-            print("At your incorrect answer, the dull clunk of something unlocking sends a shiver through your spine. Moments later the spike follows it, buckling you under the impact.")
+            print("At your incorrect answer, the dull clunk of something unlocking sends a shiver through your spine.\nMoments later the spike follows it, buckling you under the impact.")
             gruesome_death()
 
 def trophy_room():
     """
     This function allows the player to enter the trophy room and choose whether to engage with an optional puzzle 
     """
-    print("Closing the door behind you, you see the room is bare, save for the large golden trophy set on a pedastal in the centre. Do you...")
+    print("Closing the door behind you, you see the room is bare, save for the large golden trophy set on a pedastal in the centre.\nDo you...")
     print("A: Look around the room.")
     print("B: Run straight up to the trophy and take it. Shiny!")
     print("C: Cautiously approach the trophy.")
@@ -155,13 +151,13 @@ def trophy_room():
     while True:
         answer = str(input())
         if answer == "a" or answer == "A":
-            print("You look carefully into every nook and cranny around the edge of the room, but nothing catches your eye.\n Maybe he's just weirdly proud of his trophy.\n You even open the door and peek out into the corridor but there's nothing there.")
+            print("You look carefully into every nook and cranny around the edge of the room, but nothing catches your eye.\nMaybe he's just weirdly proud of his trophy.\nYou even open the door and peek out into the corridor but there's nothing there.")
             trophy_room()
         elif answer == "b" or answer == "B":
-            print("In your haste to reach it, you don't notice the floor tile that depresses under your tread.\n Such is your speed that a clever mechanism intended to trap you instead scythes clean through your body, slicing you in two.")
+            print("In your haste to reach it, you don't notice the floor tile that depresses under your tread.\nSuch is your speed that a clever mechanism intended to trap you instead scythes clean through your body, slicing you in two.")
             gruesome_death()
         elif answer == "c" or answer == "C":
-            print("Keeping an eye out, you approach the trophy. A tile depresses under your foot and you stumble forward.\n Getting to your feet, you see sawblades coming out of the walls and floor on long arms, preventing you from moving in any direction.")
+            print("Keeping an eye out, you approach the trophy. A tile depresses under your foot and you stumble forward.\nGetting to your feet, you see sawblades coming out of the walls and floor on long arms, preventing you from moving in any direction.")
             trophy_trap()
         elif answer == "d" or answer == "D":
             print("Remembering you've heard this guy's a nutjob, you decide not to risk whatever he cooked up in here and go back to the corridor")
@@ -176,21 +172,21 @@ def trophy_trap():
     password = "avaricious"
     password_question = "".join(random.sample(password, len(password)))
     
-    print("Starting to panic, you frantically turn around looking for a solution.\n You notice a placard has descended from the ceiling.")
+    print("Starting to panic, you frantically turn around looking for a solution.\nYou notice a placard has descended from the ceiling.")
     print("It says 'Your greed will be your undoing thief! Admit it and decipher my puzzle to be freed! What are you?!'")
-    print(f"Beneath the message you see {password_question}. It must be an anagram! Unscramble the letters to solve it!")
+    print(f"Beneath the message you see {password_question}.\nIt must be an anagram! Unscramble the letters and find the word to solve it!")
     
     while True:
         answer = str(input("What do you admit to being? "))
         if answer == password:
-            print("The sawblades retract and you heave a sigh of relief. Deciding to leave the trophy where it is, you waste no time in leaving the room.")
+            print("The sawblades retract and you heave a sigh of relief.\nDeciding to leave the trophy where it is, you waste no time in leaving the room.")
             corridor()
         else:
             print("Your inability to answer the question signals to the sawblades and they extend on their arms, cutting you to ribbons.")
             gruesome_death()
 
 def saferoom_door():
-    print("Your head is on a swivel at this final door. The only other room is Holmes' bedroom, so this must be it! You try the handle but it won't open. Do you...")
+    print("Your head is on a swivel at this final door.\nThe only other room is Holmes' bedroom, so this must be it!\nYou try the handle but it won't open.\nDo you...")
     print("A: Try the handle again.")
     print("B: Try to pick the lock.")
     print("C: Ask Mr. Holmes to open it.")
@@ -202,10 +198,10 @@ def saferoom_door():
             print("It's clearly locked, but keep trying, I'm sure it'll open at some stage.")
             saferoom_door()
         elif answer == "b" or answer == "B":
-            print("You take your trusty lockpick from your pocket and slip it into the keyhole. This shouldn't be too difficult...")
+            print("You take your trusty lockpick from your pocket and slip it into the keyhole.\nThis shouldn't be too difficult...")
             lockpicker()            
         elif answer == "c" or answer == "C":
-            print("Taking complete leave of your senses, you knock on the bedroom door. A bleary eyed Holmes asnwers and you ask him for the key to his study.\n He responds by punching you squarely in the face, knocking you unconscious. You wake to find yourself locked in the wardrobe and police running through the house.")
+            print("Taking complete leave of your senses, you knock on the bedroom door.\nA bleary eyed Holmes asnwers and you ask him for the key to his study.\nHe responds by punching you squarely in the face, knocking you unconscious.\nYou wake to find yourself locked in the wardrobe and police running through the house.")
             game_over()
         elif answer == "d" or answer == "D":
             print("Quitting just before the end. You utter coward.")
@@ -219,7 +215,7 @@ def lockpicker():
     """
     print("Crounching down with the lock at eye level, you prepare to pick the lock, listening intently for any click to tell you it's opening.")
     print("It looks like a normal 3 pin lock, so 3 clicks and it's open.")
-    print("If you move the lock in the wrong direction, you'll have to go back to the start. Go easy, you only have 1 pick and it's delicate, move it in the wrong direction 3 times and it'll snap.")
+    print("If you move the lock in the wrong direction, you'll have to go back to the start.\nGo easy, you only have 1 pick and it's delicate, move it in the wrong direction 3 times and it'll snap.")
     print("Type in the direction you wish to move the pick: 'UP', 'DOWN', 'LEFT' or 'RIGHT' and press ENTER")
 
     turns_to_break = 3
@@ -243,34 +239,34 @@ def lockpicker():
                     break
                 else:
                     print("Clunk! That's not right!")
-                    print("You think back to the rhyme you made up while practicing on locks like this one: 'The sun came up in the morning, left the east and headed right on to the west'")
+                    print("You think back to the rhyme you made up while practicing on locks like this one:\n'The sun came up in the morning, left the east and headed right on to the west'")
                     turns_to_break -=1
                     print(f"{turns_to_break} wrong moves until the pick breaks")
                     if turns_to_break == 0:
-                        print("The lockpick snaps in the keyhole. You curse in frustration and kick the door, then turn to see a very angry looking Mr. Holmes, one hand pointing a revolver at you and the other calling the police.")
+                        print("The lockpick snaps in the keyhole.\nYou curse in frustration and kick the door.\nTurning, you see a very angry looking Mr. Holmes, one hand pointing a revolver at you and the other calling the police.")
                         game_over()
             else:
                 print("Clunk! That's not right!")
-                print("You think back to the rhyme you made up while practicing on locks like this one: 'The sun came up in the morning, left the east and headed right on to the west'")
+                print("You think back to the rhyme you made up while practicing on locks like this one:\n'The sun came up in the morning, left the east and headed right on to the west'")
                 turns_to_break -=1
                 print(f"{turns_to_break} wrong moves until the pick breaks")
                 if turns_to_break == 0:
-                    print("The lockpick snaps in the keyhole. You curse in frustration and kick the door, then turn to see a very angry looking Mr. Holmes, one hand pointing a revolver at you and the other calling the police.")
+                    print("The lockpick snaps in the keyhole.\nYou curse in frustration and kick the door.\nTurning, you see a very angry looking Mr. Holmes, one hand pointing a revolver at you and the other calling the police.")
                     game_over()
         else:
             print("Clunk! That's not right!")
-            print("You think back to the rhyme you made up while practicing on locks like this one: 'The sun came up in the morning, left the east and headed right on to the west'")
+            print("You think back to the rhyme you made up while practicing on locks like this one:\n'The sun came up in the morning, left the east and headed right on to the west'")
             turns_to_break -=1
             print(f"{turns_to_break} wrong moves until the pick breaks")
             if turns_to_break == 0:
-                print("The lockpick snaps in the keyhole. You curse in frustration and kick the door, then turn to see a very angry looking Mr. Holmes, one hand pointing a revolver at you and the other calling the police.")
+                print("The lockpick snaps in the keyhole.\nYou curse in frustration and kick the door.\nTurning, you see a very angry looking Mr. Holmes, one hand pointing a revolver at you and the other calling the police.")
                 game_over()
 
 def last_room():
     """
     Player Choices for the last room
     """
-    print("Closing the door, you look around the room. It's Holmes' office. Remembering what you saw when casing the house, you remove a painting from the back wall, revealing a small safe. Do you...")
+    print("Closing the door, you look around the room. It's Holmes' office.\nRemembering what you saw when casing the house, you remove a painting from the back wall, revealing a small safe.\nDo you...")
     print("A: Open the safe")
     print("B: Go back to corridor")
     print("C: Cut and run")
@@ -281,10 +277,10 @@ def last_room():
             print("Taking a deep breath to steady yourself, you decide it's all or nothing.")
             safecracker()  
         elif answer == "b" or answer == "B":
-            print("Thinking you heard a noise outside, you go back out to the corridor and check. There's nothing there, but you hear the office door shut behind you. Trying the handle you find it has locked itself automatically, you'll have to open it again.")
+            print("Thinking you heard a noise outside, you go back out to the corridor and check.\nThere's nothing there, but you hear the office door shut behind you.\nTrying the handle you find it has locked itself automatically, you'll have to open it again.")
             lockpicker()
         elif answer == "c" or answer == "C":
-            print("... I mean ... just why?")
+            print("...\nI mean...just why?")
             wuss_out()    
         else:
             print("Please choose a valid option")
@@ -294,7 +290,7 @@ def safecracker():
     This function is a random number generator, the player must guess the safe code to win the final prize
     """
     print("You approach the safe. On the front is a keypad showing the numbers 0 - 3.")
-    print("You remember from casing the house that the code is 3 digits long and the first one is 2. If you get any digit wrong you'll have to go back to the start of the sequence.")
+    print("You remember from casing the house that the code is 3 digits long and the first one is 2.\nIf you get any digit wrong you'll have to go back to the start of the sequence.")
     print("Be careful! You've seen this kind of safe before!")
     print("If you enter more than 6 wrong numbers, it will set off the alarm and the police will be here in minutes!")
 
@@ -353,7 +349,7 @@ def game_over():
     """
     Ends the game in a fail state
     """
-    print("Blaring sirens ring in your ears as the police, responding to reports of suspicious activity,\n tackle you to the ground and cuff your hands behind your back.")
+    print("Blaring sirens ring in your ears as the policeburst in.\nResponding to reports of suspicious activity, they tackle you to the ground and cuff your hands behind your back.")
     print("You will be going to prison for a very long time.")
     print("GAME OVER")
     print("Would you like to play again? Please type Y/N")
@@ -403,8 +399,8 @@ def main():
     """
     The main function serving as the game's menu, allowing the player to input their name and start playing
     """
-    print("Welcome to Word Burglar. In this text-based game you will make choices to try and pull off a heist.\n Your objective is to find the priceless treasure hidden somewhere in the house.")
-    print("As you progress through the game, you will be presented with choices as you enter each room.\n Make your choice by typing the letter corresponding to the one you want, followed by ENTER.")
+    print("Welcome to Word Burglar.\nIn this text-based game you will make choices to try and pull off a heist.\nYour objective is to find the priceless treasure hidden somewhere in the house.")
+    print("As you progress through the game, you will be presented with choices as you enter each room.\nMake your choice by typing the letter corresponding to the one you want, followed by ENTER.")
     while True:
         name = str(input("To begin, please enter your name: "))
         if len(name) > 15:
