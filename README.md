@@ -15,7 +15,9 @@ To prevent the player from using names that are too long, a limit of 15 characte
 
 Where user input was required to be longer than one character, it was initially case sensitive, and any answer other than one exactly matching the variable resulted in a fail outcome. This was fixed by using string methods to change the input case to match the variable.
 
-The function to generate the safe combination initially would not work, 
+The function to generate the safe combination initially would not work,
+
+a bug arose in that the last_room function continued to run after the game had ended, and the player could enter a choice when they should not be able to
 
 Fixes:
 If statement:

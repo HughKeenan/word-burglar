@@ -167,7 +167,7 @@ def lounge_trap():
     print("It looks as though it's preparing to drop down and impale you!")
     print("Looking around in desperation, you see words appear on the mirror:")
     print("You've met your match brigand!")
-    print("I will release you only if you choose the word that desribes you!")
+    print("I will release you only if you choose the word that describes you!")
 
     options = ["PUCKERIER", "PUGILIST", "PULLDEVIL", "PURPURA", "PURFLER"]
     required_word = "PURLOINER"
@@ -400,6 +400,7 @@ def last_room():
         if answer == "a" or answer == "A":
             print("You steady yourself, and decide it's all or nothing.")
             safecracker()
+            break
         elif answer == "b" or answer == "B":
             print("You heard a noise and go back to the corridor to check.")
             print("Nothing, but you hear the office door shut behind you.")
