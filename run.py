@@ -375,25 +375,31 @@ def last_room():
     """
     Player Choices for the last room
     """
-    print("Closing the door, you look around the room. It's Holmes' office.\nRemembering what you saw when casing the house, you remove a painting from the back wall, revealing a small safe.\nDo you...")
+    print("Closing the door, you look around the room. It's Holmes' office.")
+    print("Remembering casing the house, you take a painting off the wall.")
+    print("It reveals a small safe.")
+    print("Do you...")
     print("A: Open the safe")
     print("B: Go back to corridor")
     print("C: Cut and run")
 
-    #This while loop lets the player choose how they want to proceed
+    # This while loop lets the player choose how they want to proceed
     while True:
         answer = str(input("What is your choice? "))
         if answer == "a" or answer == "A":
-            print("Taking a deep breath to steady yourself, you decide it's all or nothing.")
-            safecracker()  
+            print("You steady yourself, and decide it's all or nothing.")
+            safecracker()
         elif answer == "b" or answer == "B":
-            print("Thinking you heard a noise outside, you go back out to the corridor and check.\nThere's nothing there, but you hear the office door shut behind you.\nTrying the handle you find it has locked itself automatically, you'll have to open it again.")
+            print("You heard a noise and go back to the corridor to check.")
+            print("Nothing, but you hear the office door shut behind you.")
+            print("It has locked itself, you'll have to reopen it.")
             lockpicker()
         elif answer == "c" or answer == "C":
             print("...\nI mean...just why?")
-            wuss_out()    
+            wuss_out()
         else:
             print("Please choose a valid option")
+
 
 def safecracker():
     """
@@ -404,7 +410,7 @@ def safecracker():
     print("Be careful! You've seen this kind of safe before!")
     print("If you enter more than 6 wrong numbers, it will set off the alarm and the police will be here in minutes!")
 
-    #The numbers variable is a list comprehension of the numbers 0-3, creating a list of those numbers
+    # The numbers variable is a list comprehension of the numbers 0-3, creating a list of those numbers
     numbers = [x for x in range(4)]
     attempts = 6
 
