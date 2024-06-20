@@ -110,6 +110,7 @@ def lounge():
             game_over()
         elif answer == "d" or answer == "D":
             print("Deciding that such valuables out in the open are probably too good to be true, you turn on your heel and return to the corridor.")
+            corridor()
         else:
             print("Please choose a valid option")
 
@@ -121,8 +122,8 @@ def lounge_trap():
     print("It looks as though it's preparing to drop down and impale you!\nLooking around in desperation, you see words appear on the mirror:")
     print("You've met your match brigand! I will release you only if you can choose the word that desribes your villany!")
 
-    options = ["puckerier", "pugilist", "pulldevil", "purpura", "purfler"]
-    required_word = "purloiner" 
+    options = ["PUCKERIER", "PUGILIST", "PULLDEVIL", "PURPURA", "PURFLER"]
+    required_word = "PURLOINER" 
     choices = random.sample(options,2)
 
     show_to_player = []
@@ -132,7 +133,7 @@ def lounge_trap():
     print(show_to_player)
 
     while True:
-        answer = str(input("What word best describes you? "))
+        answer = str(input("What word best describes you? ")).upper()
         if answer == required_word:
             print("With a grinding of gears, the spike retreats. Your wrists are released and you straighten up.")
             print("Gold or no, that thing isn't worth it. Rubbing at your chafed skin, you retreat to the safety of the corridor.")
@@ -171,7 +172,7 @@ def trophy_trap():
     """
     Provides an optional puzzle by asking the player to solve a word puzzle formed from rearranged letters in a string
     """
-    password = "avaricious"
+    password = "AVARICIOUS"
     password_question = "".join(random.sample(password, len(password)))
     
     print("Starting to panic, you frantically turn around looking for a solution.\nYou notice a placard has descended from the ceiling.")
@@ -179,7 +180,7 @@ def trophy_trap():
     print(f"Beneath the message you see {password_question}.\nIt must be an anagram! Unscramble the letters and find the word to solve it!")
     
     while True:
-        answer = str(input("What do you admit to being? "))
+        answer = str(input("What do you admit to being? ")).upper()
         if answer == password:
             print("The sawblades retract and you heave a sigh of relief.\nDeciding to leave the trophy where it is, you waste no time in leaving the room.")
             corridor()
@@ -227,13 +228,13 @@ def lockpicker():
     pin_three = "RIGHT"
 
     while True:
-        path_to_open = (input("Which direction do you move the pick: "))
+        path_to_open = (input("Which direction do you move the pick: ")).upper()
         if path_to_open == pin_one:
             print("Click!")
-            path_to_open_2 = (input("Which direction do you move the pick: "))
+            path_to_open_2 = (input("Which direction do you move the pick: ")).upper()
             if path_to_open_2 == pin_two:
                 print("Click!")    
-                path_to_open_3 = (input("Which direction do you move the pick: "))
+                path_to_open_3 = (input("Which direction do you move the pick: ")).upper()
                 if path_to_open_3 == pin_three:
                     print("Click!")
                     print("Nice! Silently you open the door and slip inside.")
@@ -338,7 +339,6 @@ def safecracker():
             if attempts == 0:
                 game_over()               
 
-
 def game_won():
     """
     Ends the game in a victory state
@@ -355,8 +355,7 @@ def game_over():
     print("Blaring sirens ring in your ears as the police burst in.\nResponding to reports of suspicious activity, they tackle you to the ground and cuff your hands behind your back.")
     print("You will be going to prison for a very long time.")
     print("GAME OVER")
-    
-    
+     
     while True:
         answer = str(input("Would you like to play again? Please type Y/N: "))
         if answer == "y" or answer == "Y":
@@ -379,7 +378,6 @@ def gruesome_death():
             main()    
         else:
             print("Please choose a valid option")
-
 
 def wuss_out():
     """
@@ -411,4 +409,4 @@ def main():
             print(f"Welcome to the game {name}")
             intro()
 
-main()
+lockpicker()
