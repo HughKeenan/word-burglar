@@ -1,3 +1,4 @@
+import os
 import random
 from random import shuffle 
 
@@ -16,7 +17,7 @@ def intro():
     while True:
         answer = str(input())
         if answer == "a" or answer == "A":
-            print("Boldly striding up to the front door, you aim a mighty kick at it and drive your foot home.\n Your foot goes straight into the letterbox, whereupon it becomes stuck.")
+            print("Boldly striding up to the front door, you aim a mighty kick at it and drive your foot home.\nYour foot goes straight into the letterbox, whereupon it becomes stuck.")
             game_over()  
         elif answer == "b" or answer == "B":
             print("Sneaking around to the side of the house, you put your elbow through the window. It shatters and slices a deep gash in your arm, causing you to scream in agony.")
@@ -397,14 +398,20 @@ def wuss_out():
         else:
             print("Please choose a valid option")
 
+
 def main():
     """
     The main function serving as the game's menu, allowing the player to input their name and start playing
     """
     print("Welcome to Word Burglar. In this text-based game you will make choices to try and pull off a heist.\n Your objective is to find the priceless treasure hidden somewhere in the house.")
     print("As you progress through the game, you will be presented with choices as you enter each room.\n Make your choice by typing the letter corresponding to the one you want, followed by ENTER.")
-    name = str(input("To begin, please enter your name: "))
-    print(f"Welcome to the game {name}")
-    intro()
+    while True:
+        name = str(input("To begin, please enter your name: "))
+        if len(name) > 15:
+            print("You name may be a maximum of 15 characters long")
+            continue 
+        else:     
+            print(f"Welcome to the game {name}")
+            intro()
 
-lockpicker()
+main()
