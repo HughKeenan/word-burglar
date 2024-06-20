@@ -12,6 +12,7 @@ def intro():
     print("C: Open the window quietly")
     print("D: Cut and run")
 
+    #This while loop lets the player choose how they want to proceed
     while True:
         answer = str(input("What is your choice? "))
         if answer == "a" or answer == "A":
@@ -39,6 +40,7 @@ def first_room():
     print("C: Check the room for valuables")
     print("D: Cut and run")
 
+    #This while loop lets the player choose how they want to proceed
     while True:
         answer = str(input("What is your choice? "))
         if answer == "a" or answer == "A":
@@ -67,6 +69,7 @@ def corridor():
     print("D: Go further down the corridor.")
     print("E: Cut and run.")
 
+    #This while loop lets the player choose how they want to proceed
     while True:
         answer = str(input("What is your choice? "))
         if answer == "a" or answer == "A":
@@ -97,6 +100,7 @@ def lounge():
     print("C: Sit on the couch and take a load off.")
     print("D: Go back to the corridor, need to stay on task.")
 
+    #This while loop lets the player choose how they want to proceed
     while True:
         answer = str(input("What is your choice? "))
         if answer == "a" or answer == "A":
@@ -124,14 +128,18 @@ def lounge_trap():
 
     options = ["PUCKERIER", "PUGILIST", "PULLDEVIL", "PURPURA", "PURFLER"]
     required_word = "PURLOINER" 
+    #The choices variable selects 2 entries at random from the options list 
     choices = random.sample(options,2)
 
+    #show_to_player creates an empty list, to which the puzzle solution and 2 wrong choices are added
     show_to_player = []
     show_to_player.append(required_word)
     show_to_player.extend(choices)
 
     print(show_to_player)
 
+    #This while loop lets the player answer the puzzle
+    #string methods contained within ensure answers of upper or lower case will be accepted
     while True:
         answer = str(input("What word best describes you? ")).upper()
         if answer == required_word:
@@ -151,6 +159,8 @@ def trophy_room():
     print("B: Run straight up to the trophy and take it. Shiny!")
     print("C: Cautiously approach the trophy.")
     print("D: Go back to the corridor, this seems off.")
+
+    #This while loop lets the player choose how they want to proceed
     while True:
         answer = str(input("What is your choice? "))
         if answer == "a" or answer == "A":
@@ -173,12 +183,14 @@ def trophy_trap():
     Provides an optional puzzle by asking the player to solve a word puzzle formed from rearranged letters in a string
     """
     password = "AVARICIOUS"
+    #The password_question variable rearranges the password letters at random, creating a puzzle for the player
     password_question = "".join(random.sample(password, len(password)))
     
     print("Starting to panic, you frantically turn around looking for a solution.\nYou notice a placard has descended from the ceiling.")
     print("It says 'Your greed will be your undoing thief! Admit it and decipher my puzzle to be freed! What are you?!'")
     print(f"Beneath the message you see {password_question}.\nIt must be an anagram! Unscramble the letters and find the word to solve it!")
     
+    #This while loop lets the player choose how they want to proceed
     while True:
         answer = str(input("What do you admit to being? ")).upper()
         if answer == password:
@@ -195,6 +207,7 @@ def saferoom_door():
     print("C: Ask Mr. Holmes to open it.")
     print("D: Cut and run")
 
+    #This while loop lets the player choose how they want to proceed
     while True:
         answer = str(input("What is your choice? "))
         if answer == "a" or answer == "A":
@@ -226,7 +239,11 @@ def lockpicker():
     pin_one = "UP" 
     pin_two = "LEFT"
     pin_three = "RIGHT"
-
+    
+    #This lets the player choose how to move the lockpick to open the door
+    #string methods contained within ensure answers of upper or lower case will be accepted
+    #on a wrong choice, the player must start again from the beginning
+    #if the player answers wrongly 3 times, they lose the game
     while True:
         path_to_open = (input("Which direction do you move the pick: ")).upper()
         if path_to_open == pin_one:
@@ -274,6 +291,7 @@ def last_room():
     print("B: Go back to corridor")
     print("C: Cut and run")
 
+    #This while loop lets the player choose how they want to proceed
     while True:
         answer = str(input("What is your choice? "))
         if answer == "a" or answer == "A":
@@ -297,6 +315,7 @@ def safecracker():
     print("Be careful! You've seen this kind of safe before!")
     print("If you enter more than 6 wrong numbers, it will set off the alarm and the police will be here in minutes!")
 
+    #The numbers variable is a list comprehension of the numbers 0-3, creating a list of those numbers
     numbers = [x for x in range(4)]
     attempts = 6
 
@@ -304,10 +323,14 @@ def safecracker():
 
     code = random.sample(numbers,2)
 
+    #combination creates an empty list, to which the 3 digits of the combination are added
     combination = []
     combination.append(known_number)
     combination.extend(code)
 
+    #This lets the player guess the digits of the combination
+    #on a wrong choice, the player must start again from the beginning
+    #if the player answers wrongly 6 times, they lose the game
     while True:
         solution = int(input("Please enter the first digit: "))
         if solution == known_number:
@@ -355,7 +378,8 @@ def game_over():
     print("Blaring sirens ring in your ears as the police burst in.\nResponding to reports of suspicious activity, they tackle you to the ground and cuff your hands behind your back.")
     print("You will be going to prison for a very long time.")
     print("GAME OVER")
-     
+    
+    #This lets the player choose whether to restart on a game over
     while True:
         answer = str(input("Would you like to play again? Please type Y/N: "))
         if answer == "y" or answer == "Y":
@@ -370,6 +394,8 @@ def gruesome_death():
     This function ends the game if the player dies
     """
     print("You lie on the floor as your blood pools around you, wishing you had listened when people told you this wasn't worth it.")
+    
+    #This lets the player choose whether to restart on a game over
     while True:
         answer = str(input("Would you like to play again? Please type Y/N: "))
         if answer == "y" or answer == "Y":
@@ -384,6 +410,8 @@ def wuss_out():
     Runs if the player chooses to end the run voluntarily
     """
     print("Red faced and blinded by tears of humiliation, you slink away defeated, knowing you didn't have what it takes to claim the ultimate prize.")
+    
+    #This lets the player choose whether to restart on a game over
     while True:
         answer = str(input("Would you like to play again? Please type Y/N: "))
         if answer == "y" or answer == "Y":
@@ -400,6 +428,9 @@ def main():
     """
     print("Welcome to Word Burglar.\nIn this text-based game you will make choices to try and pull off a heist.\nYour objective is to find the priceless treasure hidden somewhere in the house.")
     print("As you progress through the game, you will be presented with choices as you enter each room.\nMake your choice by typing the letter corresponding to the one you want, followed by ENTER.")
+    
+    #This lets the player input a name
+    #names cannot be longer than 15 characters
     while True:
         name = str(input("To begin, please enter your name: "))
         if len(name) > 15:
@@ -409,4 +440,4 @@ def main():
             print(f"Welcome to the game {name}")
             intro()
 
-lockpicker()
+main()
