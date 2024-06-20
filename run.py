@@ -45,7 +45,8 @@ def first_room():
     """
     Player choices for the first room
     """
-    print("Straightening up, you look around the dark room.\nDo you...")
+    print("Straightening up, you look around the dark room.")
+    print("Do you...")
     print("A: Run to the door. Let's get this over with and get out!")
     print("B: Quietly proceed to the door")
     print("C: Check the room for valuables")
@@ -518,35 +519,39 @@ def wuss_out():
     """
     Runs if the player chooses to end the run voluntarily
     """
-    print("Red faced and blinded by tears of humiliation, you slink away defeated, knowing you didn't have what it takes to claim the ultimate prize.")
-    
-    #This lets the player choose whether to restart on a game over
+    print("Red faced and blinded by tears of humiliation, you slink away.")
+    print("Defeated, you know you never had what it took to pull this off.")
+    # This lets the player choose whether to restart on a game over
     while True:
         answer = str(input("Would you like to play again? Please type Y/N: "))
         if answer == "y" or answer == "Y":
-            intro()  
+            intro()
         elif answer == "n" or answer == "N":
-            main()    
+            main()
         else:
             print("Please choose a valid option")
 
 
 def main():
     """
-    The main function serving as the game's menu, allowing the player to input their name and start playing
+    The main function serving as the game's menu
+    This allows the player to input their name and start playing
     """
-    print("Welcome to Word Burglar.\nIn this text-based game you will make choices to try and pull off a heist.\nYour objective is to find the priceless treasure hidden somewhere in the house.")
-    print("As you progress through the game, you will be presented with choices as you enter each room.\nMake your choice by typing the letter corresponding to the one you want, followed by ENTER.")
-    
-    #This lets the player input a name
-    #names cannot be longer than 15 characters
+    print("Welcome to Word Burglar.")
+    print("In this text-based game you will make choices to pull off a heist.")
+    print("Your objective is to find the treasure hidden in the house.")
+    print("As you progress, you will be presented with choices in each room.")
+    print("Make your choice by typing the corresponding letter, then ENTER")
+    # This lets the player input a name
+    # Names cannot be longer than 15 characters
     while True:
         name = str(input("To begin, please enter your name: "))
         if len(name) > 15:
             print("You name may be a maximum of 15 characters long")
-            continue 
-        else:     
+            continue
+        else:
             print(f"Welcome to the game {name}")
             intro()
+
 
 main()
