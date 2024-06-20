@@ -476,39 +476,43 @@ def game_won():
     print("You can clrearly see the ultimate prize:")
     print("Mr. Holmes' Thesaurus!")
 
+
 def game_over():
     """
     Ends the game in a fail state
     """
-    print("Blaring sirens ring in your ears as the police burst in.\nResponding to reports of suspicious activity, they tackle you to the ground and cuff your hands behind your back.")
+    print("Blaring sirens ring in your ears as the police burst in.")
+    print("They're responding to reports of suspicious activity.")
+    print("They tackle you and cuff your hands behind your back.")
     print("You will be going to prison for a very long time.")
     print("GAME OVER")
-    
-    #This lets the player choose whether to restart on a game over
+    # This lets the player choose whether to restart on a game over
     while True:
         answer = str(input("Would you like to play again? Please type Y/N: "))
         if answer == "y" or answer == "Y":
-            intro()  
+            intro()
         elif answer == "n" or answer == "N":
-            main()    
+            main()
         else:
             print("Please choose a valid option")
+
 
 def gruesome_death():
     """
     This function ends the game if the player dies
     """
-    print("You lie on the floor as your blood pools around you, wishing you had listened when people told you this wasn't worth it.")
-    
-    #This lets the player choose whether to restart on a game over
+    print("You lie on the floor as your blood pools around you.")
+    print("You wish you had listened when people said this wasn't worth it.")
+    # This lets the player choose whether to restart on a game over
     while True:
         answer = str(input("Would you like to play again? Please type Y/N: "))
         if answer == "y" or answer == "Y":
-            intro()  
+            intro()
         elif answer == "n" or answer == "N":
-            main()    
+            main()
         else:
             print("Please choose a valid option")
+
 
 def wuss_out():
     """
