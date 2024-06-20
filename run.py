@@ -1,3 +1,5 @@
+import random
+
 def intro():
     """
     This function is the beginning of the game
@@ -344,6 +346,7 @@ def game_won():
     print("The safe door swings open. Hardly daring to believe it, you reach in and grasp the contents with trembling hands")
     print("Finally! After all this time, you can prove that you are the ultimate Word Burglar!")
     print("You hold it up to a shaft of moonlight streaming in through the window, and examine the ultimate prize:")
+    print("Mr. Holmes' Thesaurus!")
 
 def game_over():
     """
