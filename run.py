@@ -13,7 +13,7 @@ def intro():
     print("D: Cut and run")
 
     while True:
-        answer = str(input())
+        answer = str(input("What is your choice? "))
         if answer == "a" or answer == "A":
             print("Boldly striding up to the front door, you aim a mighty kick at it and drive your foot home.\nYour foot goes straight into the letterbox, whereupon it becomes stuck.")
             game_over()  
@@ -40,7 +40,7 @@ def first_room():
     print("D: Cut and run")
 
     while True:
-        answer = str(input())
+        answer = str(input("What is your choice? "))
         if answer == "a" or answer == "A":
             print("Sprinting towards the door, you fail to notice the coffee table a few feet in front of you.\nTripping over it, you fall face first onto the floor and suffer a severe concussion.")
             game_over()  
@@ -68,7 +68,7 @@ def corridor():
     print("E: Cut and run.")
 
     while True:
-        answer = str(input())
+        answer = str(input("What is your choice? "))
         if answer == "a" or answer == "A":
             print("What are you doing?! This is Word Burglar, not Turd Burlgar!")
             corridor()
@@ -98,7 +98,7 @@ def lounge():
     print("D: Go back to the corridor, need to stay on task.")
 
     while True:
-        answer = str(input())
+        answer = str(input("What is your choice? "))
         if answer == "a" or answer == "A":
             print("Stalking over to the book, you reach out and grasp it with both hands. It doesn't move, and you hear a loud click.")
             lounge_trap()            
@@ -151,7 +151,7 @@ def trophy_room():
     print("C: Cautiously approach the trophy.")
     print("D: Go back to the corridor, this seems off.")
     while True:
-        answer = str(input())
+        answer = str(input("What is your choice? "))
         if answer == "a" or answer == "A":
             print("You look carefully into every nook and cranny around the edge of the room, but nothing catches your eye.\nMaybe he's just weirdly proud of his trophy.\nYou even open the door and peek out into the corridor but there's nothing there.")
             trophy_room()
@@ -195,7 +195,7 @@ def saferoom_door():
     print("D: Cut and run")
 
     while True:
-        answer = str(input())
+        answer = str(input("What is your choice? "))
         if answer == "a" or answer == "A":
             print("It's clearly locked, but keep trying, I'm sure it'll open at some stage.")
             saferoom_door()
@@ -274,7 +274,7 @@ def last_room():
     print("C: Cut and run")
 
     while True:
-        answer = str(input())
+        answer = str(input("What is your choice? "))
         if answer == "a" or answer == "A":
             print("Taking a deep breath to steady yourself, you decide it's all or nothing.")
             safecracker()  
@@ -352,13 +352,13 @@ def game_over():
     """
     Ends the game in a fail state
     """
-    print("Blaring sirens ring in your ears as the policeburst in.\nResponding to reports of suspicious activity, they tackle you to the ground and cuff your hands behind your back.")
+    print("Blaring sirens ring in your ears as the police burst in.\nResponding to reports of suspicious activity, they tackle you to the ground and cuff your hands behind your back.")
     print("You will be going to prison for a very long time.")
     print("GAME OVER")
-    print("Would you like to play again? Please type Y/N")
+    
     
     while True:
-        answer = str(input())
+        answer = str(input("Would you like to play again? Please type Y/N: "))
         if answer == "y" or answer == "Y":
             intro()  
         elif answer == "n" or answer == "N":
@@ -371,9 +371,8 @@ def gruesome_death():
     This function ends the game if the player dies
     """
     print("You lie on the floor as your blood pools around you, wishing you had listened when people told you this wasn't worth it.")
-    print("Would you like to play again? Please type Y/N.")
     while True:
-        answer = str(input())
+        answer = str(input("Would you like to play again? Please type Y/N: "))
         if answer == "y" or answer == "Y":
             intro()  
         elif answer == "n" or answer == "N":
@@ -387,9 +386,8 @@ def wuss_out():
     Runs if the player chooses to end the run voluntarily
     """
     print("Red faced and blinded by tears of humiliation, you slink away defeated, knowing you didn't have what it takes to claim the ultimate prize.")
-    print("Would you like to play again? Please type Y/N")
     while True:
-        answer = str(input())
+        answer = str(input("Would you like to play again? Please type Y/N: "))
         if answer == "y" or answer == "Y":
             intro()  
         elif answer == "n" or answer == "N":
