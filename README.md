@@ -17,7 +17,7 @@ Where user input was required to be longer than one character, it was initially 
 
 The function to generate the safe combination initially would not work,
 
-a bug arose in that the last_room function continued to run after the game had ended, and the player could enter a choice when they should not be able to
+a bug arose in that some functions continued to run after the game had ended, and the player could enter a choice when they should not be able to. Re-examination of the code revealed that break statements had not been entered in every place they were required. Once this was done, the issue was fixed
 
 Fixes:
 If statement:

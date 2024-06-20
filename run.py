@@ -406,6 +406,7 @@ def last_room():
             print("Nothing, but you hear the office door shut behind you.")
             print("It has locked itself, you'll have to reopen it.")
             lockpicker()
+            break
         elif answer == "c" or answer == "C":
             print("...\nI mean...just why?")
             wuss_out()
