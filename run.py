@@ -43,7 +43,7 @@ def intro():
             wuss_out()
             break
         else:
-            print("Please choose a valid option")
+            print("Please choose one of the options shown")
 
 
 def first_room():
@@ -81,7 +81,7 @@ def first_room():
             wuss_out()
             break
         else:
-            print("Please choose a valid option")
+            print("Please choose one of the options shown")
 
 
 def corridor():
@@ -126,7 +126,7 @@ def corridor():
             wuss_out()
             break
         else:
-            print("Please choose a valid option")
+            print("Please choose one of the options shown")
 
 
 def lounge():
@@ -171,7 +171,7 @@ def lounge():
             corridor()
             break
         else:
-            print("Please choose a valid option")
+            print("Please choose one of the options shown")
 
 
 def lounge_trap():
@@ -259,7 +259,7 @@ def trophy_room():
             corridor()
             break
         else:
-            print("Please choose a valid option")
+            print("Please choose one of the options shown")
 
 
 def trophy_trap():
@@ -331,7 +331,7 @@ def saferoom_door():
             wuss_out()
             break
         else:
-            print("Please choose a valid option")
+            print("Please choose one of the options shown")
 
 
 def lockpicker():
@@ -439,7 +439,7 @@ def last_room():
             wuss_out()
             break
         else:
-            print("Please choose a valid option")
+            print("Please choose one of the options shown")
 
 
 def safecracker():
@@ -536,7 +536,7 @@ def game_over():
         elif answer == "n" or answer == "N":
             main()
         else:
-            print("Please choose a valid option")
+            print("Please choose one of the options shown")
 
 
 def gruesome_death():
@@ -554,7 +554,7 @@ def gruesome_death():
         elif answer == "n" or answer == "N":
             main()
         else:
-            print("Please choose a valid option")
+            print("Please choose one of the options shown")
 
 
 def wuss_out():
@@ -572,7 +572,7 @@ def wuss_out():
         elif answer == "n" or answer == "N":
             main()
         else:
-            print("Please choose a valid option")
+            print("Please choose one of the options shown")
 
 
 def main():
@@ -591,8 +591,10 @@ def main():
     while True:
         name = str(input("To begin, please enter your name: "))
         if len(name) > 15:
-            print("You name may be a maximum of 15 characters long")
+            print("You name may be a maximum of 15 characters long.")
             continue
+        elif len(name) < 1:
+            print("You must enter a name to play.")
         else:
             print(f"Welcome to the game {name}")
             intro()
