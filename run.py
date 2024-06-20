@@ -514,7 +514,7 @@ def game_won():
     print("Hardly daring to believe, you grasp the prize with trembling hands")
     print("Finally! You can prove that you are the ultimate Word Burglar!")
     print("You hold it up to a shaft of moonlight.")
-    print("You can clrearly see the ultimate prize:")
+    print("You can clearly see the ultimate prize:")
     print("Mr. Holmes' Thesaurus!")
 
 
@@ -596,6 +596,7 @@ def main():
         else:
             print(f"Welcome to the game {name}")
             intro()
+            break
 
 
-main()
+safecracker()
