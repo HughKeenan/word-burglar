@@ -601,4 +601,4 @@ def main():
             break
 
 
-lockpicker()
+safecracker()
