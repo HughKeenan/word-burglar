@@ -134,8 +134,8 @@ Manual testing was conducted on all aspects to ensure the program worked as inte
 
 The above tests were also conducted by an outside user, who recorded the same outcomes.
 
-The code was tested using a pep8 linter for compliance, no issues were found:
-![Safecracker](assets/readme-images/image-9.png))
+The code was tested using a PEP8 linter for compliance, no issues were found:
+![PEP8 results](assets/readme-images/image-9.png)
 
 ## Bugs
 
@@ -190,10 +190,10 @@ The program can now ben viewed with the open app button in the top right.
 The below was used to assist in writing if statements that would accept correct inputs of any case:
 https://www.reddit.com/r/learnpython/comments/u9ts2r/python_ignoring_my_elif_statement/
 
-The below was used to implement the while loop feature to restart a given choice if an invalid option was entered:
+The below was used as a reference to implement the while loop feature to restart a given choice if an invalid option was entered:
 https://stackoverflow.com/questions/64070816/how-to-restart-a-loop-if-the-input-is-wrong
 
-This was used to help write the logic to scramble the answer in trophy_trap()
+This was used to help write the logic to scramble the answer in trophy_trap():
 https://www.youtube.com/watch?v=vtjLxNU6eyk
 
 This was used to help figure out the logic for safecracker():

@@ -3,9 +3,9 @@ import random
 
 def intro():
     """
-    This function is the beginning of the game
+    This function is the beginning of the game.
     """
-    print("After long preparations, you are finally ready")
+    print("After long preparations, you are finally ready.")
     print("Tonight is your heist of the treasure in Mr. Holmes' residence.")
     print("You've heard his house is a bit weird, but that won't stop you.")
     print("You know his schedule and he should be asleep. Let's get to work.")
@@ -13,10 +13,10 @@ def intro():
 
     print("Do you...")
 
-    print("A: Kick the door down")
-    print("B: Break the window")
-    print("C: Open the window quietly")
-    print("D: Cut and run")
+    print("A: Kick the door down.")
+    print("B: Break the window.")
+    print("C: Open the window quietly.")
+    print("D: Cut and run.")
 
     # This while loop lets the player choose how they want to proceed
     while True:
@@ -24,7 +24,7 @@ def intro():
         if answer == "a" or answer == "A":
             print("Striding up to the door, you drive a mighty kick at it.")
             print("Your foot goes into the letterbox, where it becomes stuck.")
-            print("One of the neighbours sees you and calls the police")
+            print("One of the neighbours sees you and calls the police.")
             game_over()
             break
         elif answer == "b" or answer == "B":
@@ -43,20 +43,20 @@ def intro():
             wuss_out()
             break
         else:
-            print("Please choose one of the options shown")
+            print("Please choose one of the options shown.")
 
 
 def first_room():
     """
-    Player choices for the first room
+    Player choices for the first room.
     """
     print("Straightening up, you look around the dark room.")
     print("Do you...")
 
     print("A: Run to the door. Let's get this over with and get out!")
-    print("B: Quietly proceed to the door")
-    print("C: Check the room for valuables")
-    print("D: Cut and run")
+    print("B: Quietly proceed to the door.")
+    print("C: Check the room for valuables.")
+    print("D: Cut and run.")
 
     # This while loop lets the player choose how they want to proceed
     while True:
@@ -81,14 +81,14 @@ def first_room():
             wuss_out()
             break
         else:
-            print("Please choose one of the options shown")
+            print("Please choose one of the options shown.")
 
 
 def corridor():
     """
     This function acts as the main hub of the game.
     From here the player can head to the ending
-    or try optional challenges
+    or try optional challenges.
     """
     print("Closing the door, you find yourself in the shadowy corridor.")
     print("Do you...")
@@ -126,13 +126,13 @@ def corridor():
             wuss_out()
             break
         else:
-            print("Please choose one of the options shown")
+            print("Please choose one of the options shown.")
 
 
 def lounge():
     """
     This function brings the player into the lounge.
-    Here they can encounter an optional puzzle
+    Here they can encounter an optional puzzle.
     """
     print("The lounge is richly furnished.")
     print("You see a book bound in gold on the mantlepiece.")
@@ -171,12 +171,12 @@ def lounge():
             corridor()
             break
         else:
-            print("Please choose one of the options shown")
+            print("Please choose one of the options shown.")
 
 
 def lounge_trap():
     """
-    This function activates the trap minigame in the lounge room
+    This function activates the trap minigame in the lounge room.
     """
     print("Manacles spring from the mantlepiece and close around your wrists.")
     print("You pull at them to no avail.")
@@ -220,8 +220,8 @@ def lounge_trap():
 
 def trophy_room():
     """
-    This function allows the player to enter the trophy room
-    Here, they choose whether to engage with an optional puzzle
+    This function allows the player to enter the trophy room.
+    Here, they choose whether to engage with an optional puzzle.
     """
     print("Closing the door behind you, you see the room is bare.")
     print("Save the golden trophy set on a pedastal in the centre.")
@@ -265,12 +265,12 @@ def trophy_room():
 def trophy_trap():
     """
     Provides an optional puzzle by asking the player to
-    solve a word puzzle formed from rearranged letters in a string
+    solve a word puzzle formed from rearranged letters in a string.
     """
     password = "AVARICIOUS"
 
     # password_question rearranges the password letters
-    # this creates a puzzle for the player
+    # This creates a puzzle for the player
     password_question = "".join(random.sample(password, len(password)))
 
     print("Starting to panic, you look for a solution.")
@@ -331,14 +331,14 @@ def saferoom_door():
             wuss_out()
             break
         else:
-            print("Please choose one of the options shown")
+            print("Please choose one of the options shown.")
 
 
 def lockpicker():
     """
     This function provides a minigame based on player input
     """
-    print("You prepare to pick the lock")
+    print("You prepare to pick the lock.")
     print("You listen intently for any click to tell you it's opening.")
     print("It looks like a normal 3 pin lock; 3 clicks and it's open.")
     print("Move the pick the wrong way and you'll have to start over.")
@@ -346,7 +346,7 @@ def lockpicker():
     print("Move it in the wrong direction 3 times and it'll snap.")
     print("Type in the way you wish to move the pick:")
     print("1 is up, 2 is right, 3 is down and 4 is left.")
-    print("Then press ENTER")
+    print("Then press ENTER.")
 
     turns_to_break = 3
 
@@ -375,9 +375,9 @@ def lockpicker():
                     else:
                         print("Clunk! That's not right!")
                         print("Remember the rhyme you made up while training:")
-                        print("'Check once, think before you check twice'")
+                        print("'Check once, think before you check twice.'")
                         turns_to_break -= 1
-                        print(f"{turns_to_break} more and the pick breaks")
+                        print(f"{turns_to_break} more and the pick breaks.")
                         if turns_to_break == 0:
                             print("The lockpick snaps in the keyhole.")
                             print("You curse, frustrated, and kick the door.")
@@ -387,9 +387,9 @@ def lockpicker():
                 else:
                     print("Clunk! That's not right!")
                     print("Remember the rhyme you made up while training:")
-                    print("'Check once, think before you check twice'")
+                    print("'Check once, think before you check twice.'")
                     turns_to_break -= 1
-                    print(f"{turns_to_break} more and the pick breaks")
+                    print(f"{turns_to_break} more and the pick breaks.")
                     if turns_to_break == 0:
                         print("The lockpick snaps in the keyhole.")
                         print("You curse, frustrated, and kick the door.")
@@ -399,9 +399,9 @@ def lockpicker():
             else:
                 print("Clunk! That's not right!")
                 print("Remember the rhyme you made up while training:")
-                print("'Check once, think before you check twice'")
+                print("'Check once, think before you check twice.'")
                 turns_to_break -= 1
-                print(f"{turns_to_break} more and the pick breaks")
+                print(f"{turns_to_break} more and the pick breaks.")
                 if turns_to_break == 0:
                     print("The lockpick snaps in the keyhole.")
                     print("You curse, frustrated, and kick the door.")
@@ -421,9 +421,9 @@ def last_room():
     print("It reveals a small safe.")
     print("Do you...")
 
-    print("A: Open the safe")
-    print("B: Go back to corridor")
-    print("C: Cut and run")
+    print("A: Open the safe.")
+    print("B: Go back to corridor.")
+    print("C: Cut and run.")
 
     # This while loop lets the player choose how they want to proceed
     while True:
@@ -443,7 +443,7 @@ def last_room():
             wuss_out()
             break
         else:
-            print("Please choose one of the options shown")
+            print("Please choose one of the options shown.")
 
 
 def safecracker():
@@ -493,21 +493,21 @@ def safecracker():
                         game_won()
                         break
                     else:
-                        print("Wrong, start again")
+                        print("Wrong, start again.")
                         attempts -= 1
-                        print(f"{attempts} attempts remaining")
+                        print(f"{attempts} attempts remaining.")
                     if attempts == 0:
                         game_over()
                 else:
-                    print("Wrong, start again")
+                    print("Wrong, start again.")
                     attempts -= 1
-                    print(f"{attempts} attempts remaining")
+                    print(f"{attempts} attempts remaining.")
                     if attempts == 0:
                         game_over()
             else:
                 print("What are you doing?! You know this one!")
                 attempts -= 1
-                print(f"{attempts} attempts remaining")
+                print(f"{attempts} attempts remaining.")
                 if attempts == 0:
                     game_over()
         except ValueError:
@@ -519,7 +519,7 @@ def game_won():
     Ends the game in a victory state
     """
     print("The safe door swings open.")
-    print("Hardly daring to believe, you grasp the prize with trembling hands")
+    print("Hardly daring to believe, you grip the prize with trembling hands.")
     print("Finally! You can prove that you are the ultimate Word Burglar!")
     print("You hold it up to a shaft of moonlight.")
     print("You can clearly see the ultimate prize:")
@@ -544,7 +544,7 @@ def game_over():
         elif answer == "n" or answer == "N":
             main()
         else:
-            print("Please choose one of the options shown")
+            print("Please choose one of the options shown.")
 
 
 def gruesome_death():
@@ -562,7 +562,7 @@ def gruesome_death():
         elif answer == "n" or answer == "N":
             main()
         else:
-            print("Please choose one of the options shown")
+            print("Please choose one of the options shown.")
 
 
 def wuss_out():
@@ -580,7 +580,7 @@ def wuss_out():
         elif answer == "n" or answer == "N":
             main()
         else:
-            print("Please choose one of the options shown")
+            print("Please choose one of the options shown.")
 
 
 def main():
@@ -592,7 +592,7 @@ def main():
     print("In this text-based game you will make choices to pull off a heist.")
     print("Your objective is to find the treasure hidden in the house.")
     print("As you progress, you will be presented with choices in each room.")
-    print("Make your choice by typing the corresponding letter, then ENTER")
+    print("Make your choice by typing the corresponding letter, then ENTER.")
 
     # This lets the player input a name
     # Names cannot be longer than 15 characters
