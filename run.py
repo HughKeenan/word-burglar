@@ -369,44 +369,44 @@ def lockpicker():
                     open_path_3 = int(input("How do you move the pick: "))
                     if open_path_3 == pin_three:
                         print("Click!")
-                        print("Nice! Silently you open the door and slip inside.")
+                        print("Nice! You open the door and slip inside.")
                         last_room()
                         break
                     else:
                         print("Clunk! That's not right!")
-                        print("You remember the rhyme you made up while training:")
+                        print("Remember the rhyme you made up while training:")
                         print("'Check once, think before you check twice'")
                         turns_to_break -= 1
-                        print(f"{turns_to_break} wrong moves and the pick breaks")
+                        print(f"{turns_to_break} more and the pick breaks")
                         if turns_to_break == 0:
                             print("The lockpick snaps in the keyhole.")
-                            print("You curse in frustration and kick the door.")
-                            print("Turning, you see a furious looking Mr. Holmes.")
-                            print("Pointing a gun at you, he calls the police.")
+                            print("You curse, frustrated, and kick the door.")
+                            print("Turning, you see a furious Mr. Holmes.")
+                            print("While pointing a gun, he calls the police.")
                             game_over()
                 else:
                     print("Clunk! That's not right!")
-                    print("You remember the rhyme you made up while training:")
+                    print("Remember the rhyme you made up while training:")
                     print("'Check once, think before you check twice'")
                     turns_to_break -= 1
-                    print(f"{turns_to_break} wrong moves and the pick breaks")
+                    print(f"{turns_to_break} more and the pick breaks")
                     if turns_to_break == 0:
                         print("The lockpick snaps in the keyhole.")
-                        print("You curse in frustration and kick the door.")
-                        print("Turning, you see a furious looking Mr. Holmes.")
-                        print("Pointing a gun at you, he calls the police.")
+                        print("You curse, frustrated, and kick the door.")
+                        print("Turning, you see a furious Mr. Holmes.")
+                        print("While pointing a gun, he calls the police.")
                         game_over()
             else:
                 print("Clunk! That's not right!")
-                print("You remember the rhyme you made up while training:")
+                print("Remember the rhyme you made up while training:")
                 print("'Check once, think before you check twice'")
                 turns_to_break -= 1
-                print(f"{turns_to_break} wrong moves and the pick breaks")
+                print(f"{turns_to_break} more and the pick breaks")
                 if turns_to_break == 0:
                     print("The lockpick snaps in the keyhole.")
-                    print("You curse in frustration and kick the door.")
-                    print("Turning, you see a furious looking Mr. Holmes.")
-                    print("Pointing a gun at you, he calls the police.")
+                    print("You curse, frustrated, and kick the door.")
+                    print("Turning, you see a furious Mr. Holmes.")
+                    print("While pointing a gun, he calls the police.")
                     game_over()
         except ValueError:
             print("You must move the pick.")
@@ -512,6 +512,7 @@ def safecracker():
                     game_over()
         except ValueError:
             print("You must enter a number to proceed.")
+
 
 def game_won():
     """

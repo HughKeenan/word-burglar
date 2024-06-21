@@ -41,7 +41,17 @@ The second required puzzle is a safecracking minigame. This uses a list comprehe
 
 ![Safecracker](assets/readme-images/image-7.png)
 
-Bugs
+On beating it, they are presented with a victory message:
+![Safecracker](assets/readme-images/image-8.png)
+
+### Unimplemented features
+I wanted to insert ascii art of a book, as the games victory message. I also wanted to implement a function to clear the screen after making a choice as it can look cluttered which affects readability.
+
+## Technology Used
+
+## Testing
+
+## Bugs
 
 The function to implement the game over initially did not work
 A bug arose with the function to show choices for the first room where the wrong choice still progressed the game. Re examination of the code revealed that the if statement has been phrased wrongly, changing it resolved the issue. 
@@ -64,6 +74,9 @@ The player was initially able to begin the game by putting in an empty space as 
 
 Submitting an empty entry or a letter into safecracker initially caused the game to crash. This was solved by nesting the inputs within a try except statement to check for value errors. A similar issue happened with lockpicker. The code was refactored to work along the same lines as safecracker, which resolved the issue
 
+## Deployment
+
+## Credits
 Fixes:
 If statement:
 https://www.reddit.com/r/learnpython/comments/u9ts2r/python_ignoring_my_elif_statement/
