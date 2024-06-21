@@ -1,14 +1,14 @@
 # Word Burglar
-Word Burglar is a text-based "choose your own adventure" style game where the player chooses what actions they will take in order to pull off a burglary. This game would be well suited to fans of "choose your own adventure" style books, fans of older text based games, or any person looking for a short gaming experience with some replayability.
+Word Burglar is a text-based "choose your own adventure" style game where the player chooses what actions they will take in order to pull off a burglary. This game would be well suited to fans of "choose your own adventure" style books, fans of older text-based games, or any person looking for a short gaming experience with some replayability.
 
 ## Planning
 When planning project 3 I decided I wanted to make a game using python. Given graphics and imagery would not play a significant part in this project, I decided that a text-based game was the best fit.
 
-This decided, I worked out a binary tree which would detail the possible player choices and the outcome each would produce. On a game over in the below chart, the player is presented with the option to play again, which takes them back to the intro scene, or not, which brings them back to the enter name screen.
+This decided, I worked out a binary tree which would detail the possible player choices and the outcome each would produce.
 
-![Game binary tree](assets/readme-images/image.png)
+![Binary tree](assets/readme-images/image-1.png)
 
-This diagram provided a way to structure the project such that there were no dead ends. Regardless of what they player does, they are able to continue until they hit a game over or win the game. On victory, they are presented again with the option to play again, as 2 of the rooms are optional, and a first time player may not have experienced them.
+This diagram provided a way to structure the project such that there were no dead ends. Regardless of what they player does, they are able to continue until they hit a game over or win the game. On a game over, they can restart from the beginning of the game.
 
 ## Gameplay
 On starting the program, the player is presented with the following:
@@ -31,28 +31,28 @@ They can alternatively go to the trophy room, which presents a different puzzle.
 
 ![Trophy trap](assets/readme-images/image-5.png)
 
-In both of the above challenges, the player can answer how they wish, including with numbers or by submitting an empty answer. I deemed this to make more sense "in game" as a person in such situations may become flustered and unable to answer. 
+In both of the above challenges, the player can answer how they wish, including with numbers or by submitting an empty answer. I deemed this to make more sense "in game" as a person in such situations may become flustered and unable to answer. It also adds replayability as the player can see multiple outcomes. 
 
 Finally there are the game's required challenges. The optional ones will end the game instantly if failed, but the player may enter several wrong answers in these and still pass, as they are required for completion.
 
-The first of these is a lockpicking minigame, where the player decides on which direction to move a lockpick to open a door. They are informed on starting that if they enter 3 wrong answers they will fail. They are updated on their number of remaining chances after each failure, and provided a hint to solve the puzzle
+The first of these is a lockpicking minigame, where the player decides on which direction to move a lockpick to open a door. They are informed on starting that if they enter 3 wrong answers they will fail. They are updated on their number of remaining chances after each failure, and provided a hint to solve the puzzle. If a wrong choice is entered, they must begin the sequence again.
 
 ![Lockpicker](assets/readme-images/image-6.png)
 
-The second required puzzle is a safecracking minigame. This uses a list comprehension combined with random sampling to generate a 3 digit code for the save using the numbers 0-3. Initially I had planned to use the numbers 1 - 10, but this proved too difficult to solve with luck alone. As with the lock picking game, they have a limited number of attemps to solve the puzzle.
+The second required puzzle is a safecracking minigame. This uses a list comprehension combined with random sampling to generate a 3 digit code for the save using the numbers 0-3. Initially I had planned to use the numbers 1 - 10, but this proved too difficult to solve with luck alone. As with the lock picking game, they have a limited number of attempts to solve the puzzle, and must restart on a wrong answer.
 
 ![Safecracker](assets/readme-images/image-7.png)
 
 On beating it, they are presented with a victory message:
-![Safecracker](assets/readme-images/image-8.png)
+![Victory message](assets/readme-images/image-8.png)
 
 ### Unimplemented features
-I wanted to insert ascii art of a book, as the games victory message. I also wanted to implement a function to clear the screen after making a choice as it can look cluttered which affects readability.
+I wanted to insert ascii art of a book, as the games victory message. I also wanted to implement a function to clear the screen after making a choice as it can look cluttered which affects readability. Due to time constraints I was unable to do these.
 
 ## Technology Used
 
 Python was used to create the program.
-Heroku was used for Deployment and hosting.
+Heroku was used for deployment and hosting.
 Github was used to store code.
 Gitpod was used to write the code.
 Git was used for version control.
@@ -139,7 +139,7 @@ The code was tested using a pep8 linter for compliance, no issues were found:
 
 ## Bugs
 
-A bug arose with the function to show choices for the first room where the wrong choice still progressed the game. Re examination of the code revealed that the if statement had been phrased wrongly and the calls for the next function attached to each choice. were corrected, which resolved the issue. 
+A bug arose with the function to show choices for the first room where the wrong choice still progressed the game. Re-examination of the code revealed that the if statement had been phrased wrongly, and the calls for the next function attached to each choice. were corrected, which resolved the issue. 
 
 A bug arose also with the possibility of the player attempting to input a choice that doesn't represent one of the options, as this could create a dead end. Nesting the choices inside a while loop resolved the issue.
 
@@ -156,9 +156,9 @@ A bug arose in that some functions continued to run after the game had ended, an
 Submitting an empty entry or a letter into safecracker initially caused the game to crash. This was solved by nesting the inputs within a try except statement to check for value errors. A similar issue happened with lockpicker. The code was refactored to work along the same lines as safecracker, which resolved the issue.
 
 ## Deployment
-Log in to heroku.com, using an authenticor app where necessary.
+Log in to heroku.com, using an authenticator app where necessary.
 
-Clock on the "New" dropdown in the top right and select new app
+Clock on the "New" dropdown in the top right and select new app.
 
 Name the app. This name must be unique. Choose your region and click "Create app".
 
@@ -176,7 +176,7 @@ Where you see "Deployment method" on the left, click on Github to connect your g
 
 Search for your repository be name, select it and connect.
 
-Here automatic deplyoment can be enabled, meaning heroku will rebuild the app on each push to github.
+Here automatic deployment can be enabled, meaning heroku will rebuild the app on each push to github.
 
 Choose the main branch to deploy from and enable automatic deployment.
 
@@ -187,14 +187,13 @@ Click deploy.
 The program can now ben viewed with the open app button in the top right.
 
 ## Credits
-Fixes:
 The below was used to assist in writing if statements that would accept correct inputs of any case:
 https://www.reddit.com/r/learnpython/comments/u9ts2r/python_ignoring_my_elif_statement/
 
 The below was used to implement the while loop feature to restart a given choice if an invalid option was entered:
 https://stackoverflow.com/questions/64070816/how-to-restart-a-loop-if-the-input-is-wrong
 
-This was used to help scramble the answer in trophy_trap()
+This was used to help write the logic to scramble the answer in trophy_trap()
 https://www.youtube.com/watch?v=vtjLxNU6eyk
 
 This was used to help figure out the logic for safecracker():
