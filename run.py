@@ -358,13 +358,13 @@ def lockpicker():
     # On a wrong choice, the player must start again from the beginning
     # If the player answers wrongly 3 times, they lose the game
     while True:
-        open_path = (input("How do you move the pick: ")).upper()
+        open_path = (input("How do you move the pick: ")).upper().strip()
         if open_path == pin_one:
             print("Click!")
-            open_path_2 = (input("How do you move the pick: ")).upper()
+            open_path_2 = (input("How do you move the pick: ")).upper().strip()
             if open_path_2 == pin_two:
                 print("Click!")
-                open_path_3 = (input("How do you move the pick: ")).upper()
+                open_path_3 = (input("How do you move the pick: ")).upper().strip()
                 if open_path_3 == pin_three:
                     print("Click!")
                     print("Nice! Silently you open the door and slip inside.")
@@ -589,7 +589,7 @@ def main():
     # This lets the player input a name
     # Names cannot be longer than 15 characters
     while True:
-        name = str(input("To begin, please enter your name: "))
+        name = str(input("To begin, please enter your name: ")).strip()
         if len(name) > 15:
             print("You name may be a maximum of 15 characters long.")
             continue
@@ -601,4 +601,4 @@ def main():
             break
 
 
-main()
+lockpicker()

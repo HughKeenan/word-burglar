@@ -17,6 +17,8 @@ Where user input was required to be longer than one character, it was initially 
 
 a bug arose in that some functions continued to run after the game had ended, and the player could enter a choice when they should not be able to. Re-examination of the code revealed that break statements had not been entered in every place they were required. Once this was done, the issue was fixed.
 
+The player was initially able to begin the game by putting in an empty space as their name. To prevent this, the strip method was added to the name input.
+
 Fixes:
 If statement:
 https://www.reddit.com/r/learnpython/comments/u9ts2r/python_ignoring_my_elif_statement/
@@ -29,3 +31,6 @@ https://www.youtube.com/watch?v=vtjLxNU6eyk
 
 safecracker:
 https://www.reddit.com/r/learnpython/comments/1aeofpv/crack_the_safe_code/
+
+strip:
+https://teamtreehouse.com/community/how-do-you-prevent-an-empty-input-field-being-added-to-my-todo-list
