@@ -51,6 +51,12 @@ I wanted to insert ascii art of a book, as the games victory message. I also wan
 
 ## Technology Used
 
+Python was used to create the program.
+Heroku was used for Deployment and hosting.
+Github was used to store code.
+Gitpod was used to write the code.
+Git was used for version control.
+
 ## Testing
 Manual testing was conducted on all aspects to ensure the program worked as intended:
 | Item being tested | Action undertaken | Expected outcome | Result |
@@ -107,6 +113,24 @@ Manual testing was conducted on all aspects to ensure the program worked as inte
 | Safecracker | Submitted empty string as answer | Message saying player choose a number with no lost attempt | Pass |
 | Safecracker | Submitted a letter as answer | Message saying player must choose a number with no lost attempt | Pass |
 | Safecracker | Submitted incorrect number | Attempts decrease until failure | Pass |
+| Game Over | Submitted a space as answer | Message saying player must choose from given options | Pass |
+| Game Over | Submitted empty string as answer | Message saying player must choose from given options | Pass |
+| Game Over | Submitted number as answer | Message saying player must choose from given options | Pass |
+| Game Over | Submitted letter not shown in the options as answer|Message player must choose from given options | Pass |
+| Game Over | Submitted Y as answer| Game restarts from intro | Pass |
+| Game Over | Submitted N as answer| Game restarts from Name Entry | Pass |
+| Gruesome Death | Submitted a space as answer | Message saying player must choose from given options | Pass |
+| Gruesome Death | Submitted empty string as answer | Message saying player must choose from given options | Pass |
+| Gruesome Death | Submitted number as answer | Message saying player must choose from given options | Pass |
+| Gruesome Death | Submitted letter not shown in the options as answer|Message player must choose from given options | Pass |
+| Gruesome Death | Submitted Y as answer| Game restarts from intro | Pass |
+| Gruesome Death | Submitted N as answer| Game restarts from Name Entry | Pass |
+| Wuss Out | Submitted a space as answer | Message saying player must choose from given options | Pass |
+| Wuss Out | Submitted empty string as answer | Message saying player must choose from given options | Pass |
+| Wuss Out | Submitted number as answer | Message saying player must choose from given options | Pass |
+| Wuss Out | Submitted letter not shown in the options as answer|Message player must choose from given options | Pass |
+| Wuss Out | Submitted Y as answer| Game restarts from intro | Pass |
+| Wuss Out | Submitted N as answer| Game restarts from Name Entry | Pass |
 
 The code was tested using a pep8 linter for compliance, no issues were found:
 ![Safecracker](assets/readme-images/image-9.png))
@@ -135,6 +159,35 @@ The player was initially able to begin the game by putting in an empty space as 
 Submitting an empty entry or a letter into safecracker initially caused the game to crash. This was solved by nesting the inputs within a try except statement to check for value errors. A similar issue happened with lockpicker. The code was refactored to work along the same lines as safecracker, which resolved the issue
 
 ## Deployment
+Log in to heroku.com, using an authenticor app where necessary.
+
+Clock on the "New" dropdown in the top right and select new app
+
+Name the app. This name must be unique. Choose your region and click "Create app".
+
+On the next page click on the Settings tab.
+
+Scroll down until you see buildpacks on the left of the page.
+
+These install dependancies that we need outside of the requirements file.
+
+Click on "add buildpack", select Python and click save changes. Repeat for node.js. If done in the wrong order these can be dragged into correct poitions, as Python must be first.
+
+Go back to the top of the page and select deploy
+
+Where you see "Deployment method" on the left, click on Github to connect your github repository.
+
+Search for your repository be name, select it and connect.
+
+Here automatic deplyoment can be enabled, meaning heroku will rebuild the app on each push to github.
+
+Choose the main branch to deploy from and enable automatic deployment.
+
+This can be changed to manual later if you wish, in which the current state of a branch is deployed.
+
+Click deploy.
+
+The program can now ben viewed with the open app button in the top right.
 
 ## Credits
 Fixes:
