@@ -345,35 +345,49 @@ def lockpicker():
     print("Go easy, you only have 1 pick and it's delicate.")
     print("Move it in the wrong direction 3 times and it'll snap.")
     print("Type in the way you wish to move the pick:")
-    print("'UP', 'DOWN', 'LEFT' or 'RIGHT' and press ENTER")
+    print("1 is up, 2 is right, 3 is down and 4 is left.")
+    print("Then press ENTER")
 
     turns_to_break = 3
 
-    pin_one = "UP"
-    pin_two = "LEFT"
-    pin_three = "RIGHT"
+    pin_one = 1
+    pin_two = 4
+    pin_three = 2
 
     # This lets the player choose how to move the lockpick to open the door
     # String methods ensure answers of upper or lower case will work
     # On a wrong choice, the player must start again from the beginning
     # If the player answers wrongly 3 times, they lose the game
     while True:
-        open_path = (input("How do you move the pick: ")).upper().strip()
-        if open_path == pin_one:
-            print("Click!")
-            open_path_2 = (input("How do you move the pick: ")).upper().strip()
-            if open_path_2 == pin_two:
+        try:
+            open_path = int(input("How do you move the pick: "))
+            if open_path == pin_one:
                 print("Click!")
-                open_path_3 = (input("How do you move the pick: ")).upper().strip()
-                if open_path_3 == pin_three:
+                open_path_2 = int(input("How do you move the pick: "))
+                if open_path_2 == pin_two:
                     print("Click!")
-                    print("Nice! Silently you open the door and slip inside.")
-                    last_room()
-                    break
+                    open_path_3 = int(input("How do you move the pick: "))
+                    if open_path_3 == pin_three:
+                        print("Click!")
+                        print("Nice! Silently you open the door and slip inside.")
+                        last_room()
+                        break
+                    else:
+                        print("Clunk! That's not right!")
+                        print("You remember the rhyme you made up while training:")
+                        print("'Check once, think before you check twice'")
+                        turns_to_break -= 1
+                        print(f"{turns_to_break} wrong moves and the pick breaks")
+                        if turns_to_break == 0:
+                            print("The lockpick snaps in the keyhole.")
+                            print("You curse in frustration and kick the door.")
+                            print("Turning, you see a furious looking Mr. Holmes.")
+                            print("Pointing a gun at you, he calls the police.")
+                            game_over()
                 else:
                     print("Clunk! That's not right!")
                     print("You remember the rhyme you made up while training:")
-                    print("'Sun up, left the east and headed right on west'")
+                    print("'Check once, think before you check twice'")
                     turns_to_break -= 1
                     print(f"{turns_to_break} wrong moves and the pick breaks")
                     if turns_to_break == 0:
@@ -385,7 +399,7 @@ def lockpicker():
             else:
                 print("Clunk! That's not right!")
                 print("You remember the rhyme you made up while training:")
-                print("'Sun up, left the east and headed right on west'")
+                print("'Check once, think before you check twice'")
                 turns_to_break -= 1
                 print(f"{turns_to_break} wrong moves and the pick breaks")
                 if turns_to_break == 0:
@@ -394,18 +408,8 @@ def lockpicker():
                     print("Turning, you see a furious looking Mr. Holmes.")
                     print("Pointing a gun at you, he calls the police.")
                     game_over()
-        else:
-            print("Clunk! That's not right!")
-            print("You remember the rhyme you made up while training:")
-            print("'Sun up, left the east and headed right on west'")
-            turns_to_break -= 1
-            print(f"{turns_to_break} wrong moves and the pick breaks")
-            if turns_to_break == 0:
-                print("The lockpick snaps in the keyhole.")
-                print("You curse in frustration and kick the door.")
-                print("Turning, you see a furious looking Mr. Holmes.")
-                print("Pointing a gun at you, he calls the police.")
-                game_over()
+        except ValueError:
+            print("You must move the pick.")
 
 
 def last_room():
@@ -507,7 +511,7 @@ def safecracker():
                 if attempts == 0:
                     game_over()
         except ValueError:
-            print("Don't use letters, they're a trick!")
+            print("You must enter a number to proceed.")
 
 def game_won():
     """
