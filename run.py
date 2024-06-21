@@ -449,6 +449,7 @@ def safecracker():
     """
     print("You approach the safe.")
     print("On the front is a keypad showing the numbers 0 - 3.")
+    print("There are also letters a-z. Decoys, you suspect.")
     print("You remember from casing the house that the code is 3 digits long.")
     print("The first one is 2.")
     print("If you get any digit wrong you'll have to start again.")
@@ -475,36 +476,38 @@ def safecracker():
     # on a wrong choice, the player must start again
     # if the player answers wrongly 6 times, they lose the game
     while True:
-        solution = int(input("Please enter the first digit: "))
-        if solution == known_number:
-            print("Correct!")
-            solution2 = int(input("Please enter the second digit: "))
-            if solution2 == combination[1]:
+        try:
+            solution = int(input("Please enter the first digit: "))
+            if solution == known_number:
                 print("Correct!")
-                solution3 = int(input("Please enter the final digit: "))
-                if solution3 == combination[2]:
-                    print("You did it!")
-                    game_won()
-                    break
+                solution2 = int(input("Please enter the second digit: "))
+                if solution2 == combination[1]:
+                    print("Correct!")
+                    solution3 = int(input("Please enter the final digit: "))
+                    if solution3 == combination[2]:
+                        print("You did it!")
+                        game_won()
+                        break
+                    else:
+                        print("Wrong, start again")
+                        attempts -= 1
+                        print(f"{attempts} attempts remaining")
+                    if attempts == 0:
+                        game_over()
                 else:
                     print("Wrong, start again")
                     attempts -= 1
                     print(f"{attempts} attempts remaining")
-                if attempts == 0:
-                    game_over()
+                    if attempts == 0:
+                        game_over()
             else:
-                print("Wrong, start again")
+                print("What are you doing?! You know this one!")
                 attempts -= 1
                 print(f"{attempts} attempts remaining")
                 if attempts == 0:
                     game_over()
-        else:
-            print("What are you doing?! You know this one!")
-            attempts -= 1
-            print(f"{attempts} attempts remaining")
-            if attempts == 0:
-                game_over()
-
+        except ValueError:
+            print("Don't use letters, they're a trick!")
 
 def game_won():
     """
@@ -601,4 +604,4 @@ def main():
             break
 
 
-safecracker()
+main()

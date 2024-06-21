@@ -19,6 +19,8 @@ a bug arose in that some functions continued to run after the game had ended, an
 
 The player was initially able to begin the game by putting in an empty space as their name. To prevent this, the strip method was added to the name input.
 
+submitting an empty entry or a letter into safecracker initially caused the game to crash. This was solved by nesting the inputs within a try except statement to check for value errors.
+
 Fixes:
 If statement:
 https://www.reddit.com/r/learnpython/comments/u9ts2r/python_ignoring_my_elif_statement/
