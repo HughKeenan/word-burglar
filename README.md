@@ -6,7 +6,7 @@ When planning project 3 I decided I wanted to make a game using python. Given gr
 
 This decided, I worked out a binary tree which would detail the possible player choices and the outcome each would produce.
 
-![Binary tree](assets/readme-images/image-1.png)
+![Binary tree](assets/readme-images/image.png)
 
 This diagram provided a way to structure the project such that there were no dead ends. Regardless of what they player does, they are able to continue until they hit a game over or win the game. On a game over, they can restart from the beginning of the game.
 
