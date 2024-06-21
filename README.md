@@ -29,7 +29,9 @@ Once they progress past the first room they reach the corridor which acts as the
 
 They can alternatively go to the trophy room, which presents a different puzzle. This one scrambles the letters of a word and the player must decipher it to solve the puzzle.
 
-![Lounge trap](assets/readme-images/image-5.png)
+![Trophy trap](assets/readme-images/image-5.png)
+
+In both of the above challenges, the player can answer how they wish, including with numbers or by submitting an empty answer. I deemed this to make more sense "in game" as a person in such situations may become flustered and unable to answer. 
 
 Finally there are the game's required challenges. The optional ones will end the game instantly if failed, but the player may enter several wrong answers in these and still pass, as they are required for completion.
 
@@ -53,6 +55,58 @@ I wanted to insert ascii art of a book, as the games victory message. I also wan
 Manual testing was conducted on all aspects to ensure the program worked as intended:
 | Item being tested | Action undertaken | Expected outcome | Result |
 |--|--|--|--|
+| Name entry | Submitted empty string as answer |Message saying a name is needed | Pass |
+| Name entry | Submitted a space as answer |Message saying a name is needed | Pass |
+| Intro | Submitted a space as answer | Message saying player must choose from given options | Pass |
+| Intro | Submitted empty string as answer | Message saying player must choose from given options | Pass |
+| Intro | Submitted number as answer | Message saying player must choose from given options | Pass |
+| Intro | Submitted letter not shown in the options as answer| Message player must choose from given options | Pass |
+| Intro | Submitted one of the given options as answer| Game progresses to next stage | Pass |
+| Room 1 | Submitted a space as answer | Message saying player must choose from given options | Pass |
+| Room 1 | Submitted empty string as answer | Message saying player must choose from given options | Pass |
+| Room 1 | Submitted number as answer | Message saying player must choose from given options | Pass |
+| Room 1 | Submitted letter not shown in the options as answer| Message player must choose from given options | Pass |
+| Room | Submitted one of the given options as answer| Game progresses to next stage | Pass |
+| Corridor | Submitted a space as answer | Message saying player must choose from given options | Pass |
+| Corridor | Submitted empty string as answer | Message saying player must choose from given options | Pass |
+| Corridor | Submitted number as answer | Message saying player must choose from given options | Pass |
+| Corridor | Submitted letter not shown in the options as answer| Message player must choose from given options | Pass |
+| Corridor | Submitted one of the given options as answer| Game progresses to next stage | Pass |
+| Lounge | Submitted a space as answer | Message saying player must choose from given options | Pass |
+| Lounge | Submitted empty string as answer | Message saying player must choose from given options | Pass |
+| Lounge | Submitted number as answer | Message saying player must choose from given options | Pass |
+| Lounge | Submitted letter not shown in the options as answer| Message player must choose from given options | Pass |
+| Lounge | Submitted one of the given options as answer| Game progresses to next stage | Pass |
+| Lounge Trap | Submitted a space as answer | Game Over | Pass |
+| Lounge Trap | Submitted empty string as answer | Game Over | Pass |
+| Lounge Trap | Submitted number as answer | Game Over | Pass |
+| Lounge Trap | Submitted correct answer with mixed cases | str.upper() method converts answer and puzzle is solved | Pass |
+| Trophy Room | Submitted a space as answer | Message saying player must choose from given options | Pass |
+| Trophy Room | Submitted empty string as answer | Message saying player must choose from given options | Pass |
+| Trophy Room | Submitted number as answer | Message saying player must choose from given options | Pass |
+| Trophy Room | Submitted letter not shown in the options as answer|Message player must choose from given options | Pass |
+| Trophy Room | Submitted one of the given options as answer| Game progresses to next stage | Pass |
+| Trophy Trap | Submitted a space as answer | Game Over | Pass |
+| Trophy Trap | Submitted empty string as answer | Game Over | Pass |
+| Trophy Trap | Submitted number as answer | Game Over | Pass |
+| Trophy Trap | Submitted correct answer with mixed cases | str.upper() method converts answer and puzzle is solved | Pass |
+| Saferoom Door | Submitted a space as answer | Message saying player must choose from given options | Pass |
+| Saferoom Door | Submitted empty string as answer | Message saying player must choose from given options | Pass |
+| Saferoom Door | Submitted number as answer | Message saying player must choose from given options | Pass |
+| Saferoom Door | Submitted letter not shown in the options as answer|Message player must choose from given options | Pass |
+| Lockpicker | Submitted a space as answer | Message saying player must move the pick with no lost attempt | Pass |
+| Lockpicker | Submitted empty string as answer | Message saying player must move the pick with no lost attempt | Pass |
+| Lockpicker | Submitted a letter as answer | Message saying player must move the pick with no lost attempt | Pass |
+| Lockpicker | Submitted incorrect number | Attempts decrease until failure | Pass |
+| Final Room | Submitted a space as answer | Message saying player must choose from given options | Pass |
+| Final Room | Submitted empty string as answer | Message saying player must choose from given options | Pass |
+| Final Room | Submitted number as answer | Message saying player must choose from given options | Pass |
+| Final Room | Submitted letter not shown in the options as answer|Message player must choose from given options | Pass |
+| Final Room | Submitted one of the given options as answer| Game progresses to next stage | Pass |
+| Safecracker | Submitted a space as answer | Message saying player choose a number with no lost attempt | Pass |
+| Safecracker | Submitted empty string as answer | Message saying player choose a number with no lost attempt | Pass |
+| Safecracker | Submitted a letter as answer | Message saying player must choose a number with no lost attempt | Pass |
+| Safecracker | Submitted incorrect number | Attempts decrease until failure | Pass |
 
 The code was tested using a pep8 linter for compliance, no issues were found:
 ![Safecracker](assets/readme-images/image-9.png))
