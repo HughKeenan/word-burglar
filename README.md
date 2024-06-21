@@ -50,6 +50,12 @@ I wanted to insert ascii art of a book, as the games victory message. I also wan
 ## Technology Used
 
 ## Testing
+Manual testing was conducted on all aspects to ensure the program worked as intended:
+| Item being tested | Action undertaken | Expected outcome | Result |
+|--|--|--|--|
+
+The code was tested using a pep8 linter for compliance, no issues were found:
+![Safecracker](assets/readme-images/image-9.png))
 
 ## Bugs
 
