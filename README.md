@@ -1,3 +1,46 @@
+# Word Burglar
+Word Burglar is a text-based "choose your own adventure" style game where the player chooses what actions they will take in order to pull off a burglary. This game would be well suited to fans of "choose your own adventure" style books, fans of older text based games, or any person looking for a short gaming experience with some replayability.
+
+## Planning
+When planning project 3 I decided I wanted to make a game using python. Given graphics and imagery would not play a significant part in this project, I decided that a text-based game was the best fit.
+
+This decided, I worked out a binary tree which would detail the possible player choices and the outcome each would produce. On a game over in the below chart, the player is presented with the option to play again, which takes them back to the intro scene, or not, which brings them back to the enter name screen.
+
+![Game binary tree](assets/readme-images/image.png)
+
+This diagram provided a way to structure the project such that there were no dead ends. Regardless of what they player does, they are able to continue until they hit a game over or win the game. On victory, they are presented again with the option to play again, as 2 of the rooms are optional, and a first time player may not have experienced them.
+
+## Gameplay
+On starting the program, the player is presented with the following:
+
+![Name Entry Screen](assets/readme-images/image-1.png)
+
+It is at this point the player ust enter their name, which may be comprised of letters or numbers, and must be between 1 and 15 characters long. Once this is done, they will be presented with their first choice:
+
+![Entered name and intro](assets/readme-images/image-2.png)
+
+The player makes a choice by typing the corresponding letter and then enter. The player always has the option to end the game by selecting the bottom option on the list. As stated above, this will end the game, at which point they can restart.
+
+![Option to quit](assets/readme-images/image-3.png)
+
+Once they progress past the first room they reach the corridor which acts as the game's main hub. Here, they are presented with optional challenges. In the lounge room, a challenge is presented where the player must choose the correct answer out of three similar appearing words, 2 being chosen at random from an array.
+
+![Lounge trap](assets/readme-images/image-4.png)
+
+They can alternatively go to the trophy room, which presents a different puzzle. This one scrambles the letters of a word and the player must decipher it to solve the puzzle.
+
+![Lounge trap](assets/readme-images/image-5.png)
+
+Finally there are the game's required challenges. The optional ones will end the game instantly if failed, but the player may enter several wrong answers in these and still pass, as they are required for completion.
+
+The first of these is a lockpicking minigame, where the player decides on which direction to move a lockpick to open a door. They are informed on starting that if they enter 3 wrong answers they will fail. They are updated on their number of remaining chances after each failure, and provided a hint to solve the puzzle
+
+![Lockpicker](assets/readme-images/image-6.png)
+
+The second required puzzle is a safecracking minigame. This uses a list comprehension combined with random sampling to generate a 3 digit code for the save using the numbers 0-3. Initially I had planned to use the numbers 1 - 10, but this proved too difficult to solve with luck alone. As with the lock picking game, they have a limited number of attemps to solve the puzzle.
+
+![Safecracker](assets/readme-images/image-7.png)
+
 Bugs
 
 The function to implement the game over initially did not work
